@@ -1,0 +1,1345 @@
+있음($1)}other{계정에 비밀번호가 #개 저장되어 있음($1)}}{COUNT,plural, =0{없음}=1{$1}=2{$1, $2}other{$1, $2, $3}}{COUNT,plural, =1{외 1개}other{외 #개}}{COUNT,plural, =0{없음}=1{계정 1개의 로그인 데이터}other{계정 #개의 로그인 데이터}}없음$1; $2{COUNT,plural, =0{없음}=1{사이트 1개}other{사이트 #개}}{COUNT,plural, =1{신용카드 1개}other{신용카드 #개}}{COUNT,plural, =1{주소 1개}other{주소 #개}}{COUNT,plural, =1{제안 1개}other{제안 #개}}{COUNT,plural, =1{그 외 제안 1건}other{그 외 제안 #건}}$1(동기화됨)$1, $2$1, $2(동기화됨)$1, $2, $3$1, $2, $3(동기화됨)이 작업을 수행하면 대부분의 웹사이트에서 로그아웃됩니다.{COUNT,plural, =0{없음}=1{사이트 1개 }other{사이트 #개 }}{COUNT,plural, =0{없음}=1{사이트 1개(Google 계정에서 로그아웃되지 않음)}other{사이트 #개(Google 계정에서 로그아웃되지 않음)}}{COUNT,plural, =0{없음}=1{앱 1개($1)}=2{앱 2개($1, $2)}other{앱 #개($1, $2, $3)}}설정고급 설정 숨기기고급 설정 표시네트워크 작업 예측으로 페이지 로드 성능 향상프록시 설정 변경…자동 다운로드비정상 종료비정상 종료($1회)개발자 세부정보 표시$1에 비정상 종료 발생상태:업로드되지 않음아직 업로드 또는 무시되지 않음사용자가 요청한 업로드업로드됨업로드된 비정상 종료 보고서 ID:업로드 시간:로컬 비정상 종료 컨텍스트:크기:추가 세부정보 제공최근에 보고된 비정상 종료가 없습니다. 비정상 종료 보고를 사용 중지했을 때 발생한 비정상 종료는 여기에 표시되지 않습니다.비정상 종료 보고가 사용 중지되었습니다.비정상 종료 업로드 시작하기지금 보내기폼 재전송 확인찾고 있는 페이지에서 사용자가 입력한 정보를 사용했습니다. 해당 페이지로 돌아가면 기존 작업을 반복할 수 있습니다. 계속하시겠습니까?이 기능을 이용하려면 자바스크립트를 사용하도록 설정해야 합니다.추가글을 추가하지 못했습니다.보기글을 조회하지 못했습니다.새로고침항목을 가져오는 중…도움말을 찾지 못했습니다.요청한 글을 찾지 못했습니다.데이터 없음DOM Distiller리더 모드세부정보세부정보 숨기기저장된 사본 표시이 기기의 소유자가 공룡 게임을 사용 중지했습니다.<span jscontent="originalUrlForDisplay"></span>의 <a jsvalues="href:urlCorrection;.jstdata:$this" onmousedown="linkClicked(this.jstdata)">캐시된 사본</a>에 액세스<a jsvalues="href:urlCorrection;.jstdata:$this" onmousedown="linkClicked(this.jstdata)" jscontent="urlCorrectionForDisplay"></a>을(를) 찾으셨나요?<a jsvalues="href:urlCorrection;.jstdata:$this" onmousedown="linkClicked(this.jstdata)" jscontent="urlCorrectionForDisplay"></a>(으)로 이동페이지 로드에 필요한 데이터를 다시 제출하려면 새로고침 버튼을 누릅니다.인터넷 연결을 확인합니다.케이블 연결을 확인하고 라우터, 모뎀, 사용하고 있는 다른 네트워크 장치를 다시 부팅하세요.보안 DNS 설정 확인보안 DNS 설정을 확인하세요. 연결되지 않는 보안 DNS 서버를 설정했을 수도 있습니다.Check your DNS over HTTPS settingsGo to Opera > Preferences… > System > Use DNS-over-HTTPS instead of the system’s DNS settings and check your DNS-over-HTTPS provider.DNS 설정을 확인합니다.잘 모르는 경우 네트워크 관리자에게 문의하시기 바랍니다.네트워크 예측을 사용 안 함으로 설정해 보세요.이미 네트워크 액세스가 허용된 프로그램으로 되어 있는 경우
+    목록에서 삭제한 뒤 다시 추가합니다.프록시 서버를 사용하는 경우프록시 설정을 확인하거나 네트워크 관리자에게 문의하여 프록시 서버가 작동하는지 확인하세요. 프록시 서버를 사용하지 않아도 되는 경우: $1관리자 정책을 확인하세요.차단된 URL 및 시스템 관리자가 설정한 기타 정책 목록을 확인하려면 <strong>chrome://policy</strong>를 방문하세요.지원되지 않는 프로토콜클라이언트와 서버가 일반적인 SSL 프로토콜 버전 또는 암호화 제품군을 지원하지 않습니다.<a jsvalues="href:originURL;.jstdata:$this" onmousedown="linkClicked(this.jstdata)">사이트의 홈페이지를 방문</a>해 보세요.사이트에 연결할 수 없음인터넷 액세스가 차단됨인터넷 연결 없음이 사이트를 캐시에서 로드할 수 없음연결이 끊김<span jscontent="hostName"></span> 페이지를 찾을 수 없음파일을 찾을 수 없음<span jscontent="hostName"></span>이(가) 차단됨<strong jscontent="failedUrl"></strong>의 웹페이지가 일시적으로 다운되었거나 새 웹 주소로 완전히 이동했을 수 있습니다.<strong jscontent="hostName"></strong>에서 응답하는 데 시간이 너무 오래 걸립니다.연결이 재설정되었습니다.<strong jscontent="hostName"></strong>와(과)의 연결이 예기치 않게 종료되었습니다.현재 <strong jscontent="hostName"></strong>에 연결할 수 없습니다.네트워크 변경이 감지되었습니다.<strong jscontent="hostName"></strong>에서 연결을 거부했습니다.<strong jscontent="hostName"></strong>의 서버 IP 주소를 찾을 수 없습니다.회사, 조직, 학교 인트라넷의 해당 사이트가 외부 웹사이트와 동일한 URL을 갖고 있습니다.
+    <br /><br />
+    시스템 관리자에게 문의하세요.<strong jscontent="failedUrl"></strong>에 연결할 수 없습니다.<strong jscontent="failedUrl"></strong>의 파일을 읽을 수 없습니다. 삭제 또는 이동되었거나 파일 사용 권한이 액세스를 차단할 수도 있습니다.방화벽이나 바이러스 백신 소프트웨어가 연결을 차단했을 수 있습니다.프록시 서버에 문제가 발생했거나 주소가 잘못되었습니다.사이트의 저장된(캐시된) 사본을 읽을 수 없습니다.컴퓨터가 절전 모드 상태입니다.다음 웹 주소(<strong jscontent="failedUrl"></strong>)에 대해 발견된 웹페이지가 없습니다.이동되었거나 삭제되었을 수 있습니다.<strong jscontent="hostName"></strong>에서 리디렉션한 횟수가 너무 많습니다.<strong jscontent="hostName"></strong>에서 전송한 데이터가 없습니다.<strong jscontent="hostName"></strong>에서 잘못된 응답을 전송했습니다.<strong jscontent="hostName"></strong>의 <abbr id="dnsDefinition">DNS 주소</abbr>를 찾을 수 없습니다. 문제를 진단하는 중입니다.<span jscontent="hostName"></span>에 대한 액세스가 거부됨파일 액세스 거부됨이 페이지를 볼 수 있는 권한이 없습니다.페이지가 작동하지 않습니다.문제가 계속되면 사이트 소유자에게 문의하세요.현재 <strong jscontent="hostName"></strong>에서 요청을 처리할 수 없습니다.<strong jscontent="hostName"></strong>에서 보안 기준을 준수하지 않습니다.SSL protocol error.과거에는 SSLv3 폴백이 서버와 핸드셰이크할 수 있었지만, 프로토콜에 대한 새로운 공격으로 인해 당사에서는 더 이상 SSLv3 폴백을 승인하지 않습니다. TLS 1.0 이상과 TLS 1.2를 지원하기 위해서는 서버를 업데이트해야 합니다.<strong jscontent="hostName"></strong>에서 지원되지 않는 프로토콜을 사용합니다.브라우저와 서버가 사용할 TLS 버전과 암호에 대해 합의를 할 수 없습니다. 서버가 SSL 버전 3 등의 이전 프로토콜만 지원하기 때문일 수 있습니다.사이트에 보안 연결할 수 없음<strong jscontent="hostName"></strong>에서 로그인 인증서를 승인하지 않았거나 로그인 인증서가 제공되지 않았을 수 있습니다.서버에 대한 요청이 확장 프로그램에 의해 차단되었습니다.컴퓨터를 설정한 사용자가 이 사이트를 차단했습니다.이 콘텐츠는 차 0 #016087;
+}
+
+/* Remove background focus style from IE11 while keeping focus style available on option elements. */
+.wp-core-ui select::-ms-value {
+	background: transparent;
+	color: #555;
+}
+
+.wp-core-ui select:hover::-ms-value {
+	color: #007cba;
+}
+
+.wp-core-ui select:focus::-ms-value {
+	color: #016087;
+}
+
+.wp-core-ui select.disabled::-ms-value,
+.wp-core-ui select:disabled::-ms-value {
+	color: #a0a5aa;
+}
+
+/* Hide the native down arrow for select element on IE. */
+.wp-core-ui select::-ms-expand {
+	display: none;
+}
+
+.wp-admin .button-cancel {
+	display: inline-block;
+	min-height: 28px;
+	padding: 0 5px;
+	line-height: 2;
+}
+
+.meta-box-sortables select {
+	max-width: 100%;
+}
+
+.meta-box-sortables input {
+	vertical-align: middle;
+}
+
+.misc-pub-post-status select {
+	margin-top: 0;
+}
+
+.wp-core-ui select[multiple] {
+	height: auto;
+	padding-left: 8px;
+	background: #fff;
+}
+
+.submit {
+	padding: 1.5em 0;
+	margin: 5px 0;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	border: none;
+}
+
+form p.submit a.cancel:hover {
+	text-decoration: none;
+}
+
+p.submit {
+	text-align: right;
+	max-width: 100%;
+	margin-top: 20px;
+	padding-top: 10px;
+}
+
+.textright p.submit {
+	border: none;
+	text-align: left;
+}
+
+table.form-table + p.submit,
+table.form-table + input + p.submit,
+table.form-table + input + input + p.submit {
+	border-top: none;
+	padding-top: 0;
+}
+
+#minor-publishing-actions input,
+#major-publishing-actions input,
+#minor-publishing-actions .preview {
+	text-align: center;
+}
+
+textarea.all-options,
+input.all-options {
+	width: 250px;
+}
+
+input.large-text,
+textarea.large-text {
+	width: 99%;
+}
+
+.regular-text {
+	width: 25em;
+}
+
+input.small-text {
+	width: 50px;
+	padding: 0 6px;
+}
+
+input[type="number"].small-text {
+	width: 65px;
+	padding-left: 0;
+}
+
+input.tiny-text {
+	width: 35px;
+}
+
+input[type="number"].tiny-text {
+	width: 45px;
+	padding-left: 0;
+}
+
+#doaction,
+#doaction2,
+#post-query-submit {
+	margin: 0 0 0 8px;
+}
+
+.tablenav .actions select {
+	float: right;
+	margin-left: 6px;
+	max-width: 12.5rem;
+}
+
+#timezone_string option {
+	margin-right: 1em;
+}
+
+.wp-hide-pw > .dashicons,
+.wp-cancel-pw > .dashicons {
+	position: relative;
+	top: 3px;
+	width: 1.25rem;
+	height: 1.25rem;
+	top: 0.25rem;
+	font-size: 20px;
+}
+
+.wp-cancel-pw .dashicons-no {
+	display: none;
+}
+
+label,
+#your-profile label + a {
+	vertical-align: middle;
+}
+
+fieldset label,
+#your-profile label + a {
+	vertical-align: middle;
+}
+
+.options-media-php [for*="_size_"] {
+	min-width: 10em;
+	vertical-align: baseline;
+}
+
+.options-media-php .small-text[name*="_size_"] {
+	margin: 0 0 1em;
+}
+
+#misc-publishing-actions label {
+	vertical-align: baseline;
+}
+
+#pass-strength-result {
+	background-color: #eee;
+	border: 1px solid #ddd;
+	color: #23282d;
+	margin: -1px 1px 5px;
+	padding: 3px 5px;
+	text-align: center;
+	width: 25em;
+	box-sizing: border-box;
+	opacity: 0;
+}
+
+#pass-strength-result.short {
+	background-color: #f1adad;
+	border-color: #e35b5b;
+	opacity: 1;
+}
+
+#pass-strength-result.bad {
+	background-color: #fbc5a9;
+	border-color: #f78b53;
+	opacity: 1;
+}
+
+#pass-strength-result.good {
+	background-color: #ffe399;
+	border-color: #ffc733;
+	opacity: 1;
+}
+
+#pass-strength-result.strong {
+	background-color: #c1e1b9;
+	border-color: #83c373;
+	opacity: 1;
+}
+
+#pass1.short, #pass1-text.short {
+	border-color: #e35b5b;
+}
+
+#pass1.bad, #pass1-text.bad {
+	border-color: #f78b53;
+}
+
+#pass1.good, #pass1-text.good {
+	border-color: #ffc733;
+}
+
+#pass1.strong, #pass1-text.strong {
+	border-color: #83c373;
+}
+
+.pw-weak {
+	display: none;
+}
+
+.indicator-hint {
+	padding-top: 8px;
+}
+
+.wp-pwd [type="text"],
+.wp-pwd [type="password"] {
+	margin-bottom: 0;
+	/* Same height as the buttons */
+	min-height: 30px;
+}
+
+/* Hide the Edge "reveal password" native button */
+.wp-pwd input::-ms-reveal {
+	display: none;
+}
+
+#pass1-text,
+.show-password #pass1 {
+	display: none;
+}
+
+#pass1-text::-ms-clear {
+	display: none;
+}
+
+.show-password #pass1-text {
+	display: inline-block;
+}
+
+p.search-box {
+	float: left;
+	margin: 0;
+}
+
+.network-admin.themes-php p.search-box {
+	clear: right;
+}
+
+.search-box input[name="s"],
+.tablenav .search-plugins input[name="s"],
+.tagsdiv .newtag {
+	float: right;
+	margin: 0 0 0 4px;
+}
+
+.js.plugins-php .search-box .wp-filter-search {
+	margin: 0;
+	width: 280px;
+}
+
+input[type="text"].ui-autocomplete-loading,
+input[type="email"].ui-autocomplete-loading {
+	background-image: url(../images/loading.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+	visibility: visible;
+}
+
+input.ui-autocomplete-input.open {
+	border-bottom-color: transparent;
+}
+
+ul#add-to-blog-users {
+	margin: 0 14px 0 0;
+}
+
+.ui-autocomplete {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	position: absolute;
+	z-index: 10000;
+	border: 1px solid #5b9dd9;
+	box-shadow: 0 1px 2px rgba(30, 140, 190, 0.8);
+	background-color: #fff;
+}
+
+.ui-autocomplete li {
+	margin-bottom: 0;
+	padding: 4px 10px;
+	white-space: nowrap;
+	text-align: right;
+	cursor: pointer;
+}
+
+/* Colors for the wplink toolbar autocomplete. */
+.ui-autocomplete .ui-state-focus {
+	background-color: #ddd;
+}
+
+/* Colors for the tags autocomplete. */
+.wp-tags-autocomplete .ui-state-focus {
+	background-color: #0073aa;
+	color: #fff;
+}
+
+/*------------------------------------------------------------------------------
+  15.0 - Comments Screen
+------------------------------------------------------------------------------*/
+
+.form-table {
+	border-collapse: collapse;
+	margin-top: 0.5em;
+	width: 100%;
+	clear: both;
+}
+
+.form-table,
+.form-table td,
+.form-table th,
+.form-table td p {
+	font-size: 14px;
+}
+
+.form-table td {
+	margin-bottom: 9px;
+	padding: 15px 10px;
+	line-height: 1.3;
+	vertical-align: middle;
+}
+
+.form-table th,
+.form-wrap label {
+	color: #23282d;
+	font-weight: 400;
+	text-shadow: none;
+	vertical-align: baseline;
+}
+
+.form-table th {
+	vertical-align: top;
+	text-align: right;
+	padding: 20px 0 20px 10px;
+	width: 200px;
+	line-height: 1.3;
+	font-weight: 600;
+}
+
+.form-table th.th-full, /* Not used by core. Back-compat for pre-4.8 */
+.form-table .td-full {
+	width: auto;
+	padding: 20px 0 20px 10px;
+	font-weight: 400;
+}
+
+.form-table td p {
+	margin-top: 4px;
+	margin-bottom: 0;
+}
+
+.form-table .date-time-doc {
+	margin-top: 1em;
+}
+
+.form-table p.timezone-info {
+	margin: 1em 0;
+}
+
+.form-table td fieldset label {
+	margin: 0.25em 0 0.5em !important;
+	display: inline-block;
+}
+
+.form-table td fieldset label,
+.form-table td fieldset p,
+.form-table td fieldset li {
+	line-height: 1.4;
+}
+
+.form-table input.tog,
+.form-table input[type="radio"] {
+	margin-top: -4px;
+	margin-left: 4px;
+	float: none;
+}
+
+.form-table .pre {
+	padding: 8px;
+	margin: 0;
+}
+
+table.form-table td .updated {
+	font-size: 13px;
+}
+
+table.form-table td .updated p {
+	font-size: 13px;
+	margin: 0.3em 0;
+}
+
+/*------------------------------------------------------------------------------
+  18.0 - Users
+------------------------------------------------------------------------------*/
+
+#profile-page .form-table textarea {
+	width: 500px;
+	margin-bottom: 6px;
+}
+
+#profile-page .form-table #rich_editing {
+	margin-left: 5px
+}
+
+#your-profile legend {
+	font-size: 22px;
+}
+
+#display_name {
+	width: 15em;
+}
+
+#adduser .form-field input,
+#createuser .form-field input {
+	width: 25em;
+}
+
+.color-option {
+	display: inline-block;
+	width: 24%;
+	padding: 5px 15px 15px;
+	box-sizing: border-box;
+	margin-bottom: 3px;
+}
+
+.color-option:hover,
+.color-option.selected {
+	background: #ddd;
+}
+
+.color-palette {
+	width: 100%;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+.color-palette td {
+	height: 20px;
+	padding: 0;
+	border: none;
+}
+
+.color-option {
+	cursor: pointer;
+}
+
+/*------------------------------------------------------------------------------
+  19.0 - Tools
+------------------------------------------------------------------------------*/
+
+.tool-box .title {
+	margin: 8px 0;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 24px;
+}
+
+.label-responsive {
+	vertical-align: middle;
+}
+
+#export-filters p {
+	margin: 0 0 1em;
+}
+
+#export-filters p.submit {
+	margin: 7px 0 5px;
+}
+
+/* Card styles */
+
+.card {
+	position: relative;
+	margin-top: 20px;
+	padding: 0.7em 2em 1em;
+	min-width: 255px;
+	max-width: 520px;
+	border: 1px solid #ccd0d4;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	background: #fff;
+	box-sizing: border-box;
+}
+
+/* Press this styles */
+
+.pressthis h4 {
+	margin: 2em 0 1em;
+}
+
+.pressthis textarea {
+	width: 100%;
+	font-size: 1em;
+}
+
+#pressthis-code-wrap {
+	overflow: auto;
+}
+
+.pressthis-bookmarklet-wrapper {
+	margin: 20px 0 8px;
+	vertical-align: top;
+	position: relative;
+	z-index: 1;
+}
+
+.pressthis-bookmarklet,
+.pressthis-bookmarklet:hover,
+.pressthis-bookmarklet:focus,
+.pressthis-bookmarklet:active {
+	display: inline-block;
+	position: relative;
+	cursor: move;
+	color: #32373c;
+	background: #e5e5e5;
+	border-radius: 5px;
+	border: 1px solid #b4b9be;
+	font-style: normal;
+	line-height: 16px;
+	font-size: 14px;
+	text-decoration: none;
+}
+
+.pressthis-bookmarklet:active {
+	outline: none;
+}
+
+.pressthis-bookmarklet:after {
+	content: "";
+	width: 70%;
+	height: 55%;
+	z-index: -1;
+	position: absolute;
+	left: 10px;
+	bottom: 9px;
+	background: transparent;
+	transform: skew(-20deg) rotate(-6deg);
+	box-shadow: 0 10px 8px rgba(0, 0, 0, 0.6);
+}
+
+.pressthis-bookmarklet:hover:after {
+	transform: skew(-20deg) rotate(-9deg);
+	box-shadow: 0 10px 8px rgba(0, 0, 0, 0.7);
+}
+
+.pressthis-bookmarklet span {
+	display: inline-block;
+	margin: 0px 0 0;
+	padding: 0px 9px 8px 12px;
+}
+
+.pressthis-bookmarklet span:before {
+	color: #72777c;
+	font: normal 20px/1 dashicons;
+	content: "\f157";
+	position: relative;
+	display: inline-block;
+	top: 4px;
+	margin-left: 4px;
+}
+
+.pressthis-js-toggle {
+	margin-right: 10px;
+	padding: 0;
+	height: auto;
+	vertical-align: top;
+}
+
+/* to override the button class being applied */
+.pressthis-js-toggle.button.button {
+	margin-right: 10px;
+	padding: 0;
+	height: auto;
+	vertical-align: top;
+}
+
+.pressthis-js-toggle .dashicons {
+	margin: 5px 7px 6px 8px;
+	color: #555d66;
+}
+
+/*------------------------------------------------------------------------------
+  20.0 - Settings
+------------------------------------------------------------------------------*/
+
+.timezone-info code {
+	white-space: nowrap;
+}
+
+.defaultavatarpicker .avatar {
+	margin: 2px 0;
+	vertical-align: middle;
+}
+
+.options-general-php .date-time-text {
+	display: inline-block;
+	min-width: 10em;
+}
+
+.options-general-php input.small-text {
+	width: 56px;
+	margin: -2px 0;
+}
+
+.options-general-php .spinner {
+	float: none;
+	margin: -3px 3px 0;
+}
+
+.settings-php .language-install-spinner,
+.options-general-php .language-install-spinner {
+	display: inline-block;
+	float: none;
+	margin: -3px 5px 0;
+	vertical-align: middle;
+}
+
+.form-table.permalink-structure .available-structure-tags li {
+	float: right;
+	margin-left: 5px;
+}
+
+/*------------------------------------------------------------------------------
+  21.0 - Network Admin
+------------------------------------------------------------------------------*/
+
+.setup-php textarea {
+	max-width: 100%;
+}
+
+.form-field #site-address {
+	max-width: 25em;
+}
+
+.form-field #domain {
+	max-width: 22em;
+}
+
+.form-field #site-title,
+.form-field #admin-email,
+.form-field #path,
+.form-field #blog_registered,
+.form-field #blog_last_updated {
+	max-width: 25em;
+}
+
+.form-field #path {
+	margin-bottom: 5px;
+}
+
+#search-users,
+#search-sites {
+	max-width: 60%;
+}
+
+/*------------------------------------------------------------------------------
+   Credentials check dialog for Install and Updates
+------------------------------------------------------------------------------*/
+
+.request-filesystem-credentials-dialog {
+	display: none;
+	/* The customizer uses visibility: hidden on the body for full-overlays. */
+	visibility: visible;
+}
+
+.request-filesystem-credentials-dialog .notification-dialog {
+	top: 10%;
+	max-height: 85%;
+}
+
+.request-filesystem-credentials-dialog-content {
+	margin: 25px;
+}
+
+#request-filesystem-credentials-title {
+	font-size: 1.3em;
+	margin: 1em 0;
+}
+
+.request-filesystem-credentials-form legend {
+	font-size: 1em;
+	padding: 1.33em 0;
+	font-weight: 600;
+}
+
+.request-filesystem-credentials-form input[type="text"],
+.request-filesystem-credentials-form input[type="password"] {
+	display: block;
+}
+
+.request-filesystem-credentials-dialog input[type="text"],
+.request-filesystem-credentials-dialog input[type="password"] {
+	width: 100%;
+}
+
+.request-filesystem-credentials-form .field-title {
+	font-weight: 600;
+}
+
+.request-filesystem-credentials-dialog label[for="hostname"],
+.request-filesystem-credentials-dialog label[for="public_key"],
+.request-filesystem-credentials-dialog label[for="private_key"] {
+	display: block;
+	margin-bottom: 1em;
+}
+
+.request-filesystem-credentials-dialog .ftp-username,
+.request-filesystem-credentials-dialog .ftp-password {
+	float: right;
+	width: 48%;
+}
+
+.request-filesystem-credentials-dialog .ftp-password {
+	margin-right: 4%;
+}
+
+.request-filesystem-credentials-dialog .request-filesystem-credentials-action-buttons {
+	text-align: left;
+}
+
+.request-filesystem-credentials-dialog label[for="ftp"] {
+	margin-left: 10px;
+}
+
+.request-filesystem-credentials-dialog #auth-keys-desc {
+	margin-bottom: 0;
+}
+
+#request-filesystem-credentials-dialog .button:not(:last-child) {
+	margin-left: 10px;
+}
+
+#request-filesystem-credentials-form .cancel-button {
+	display: none;
+}
+
+#request-filesystem-credentials-dialog .cancel-button {
+	display: inline;
+}
+
+.request-filesystem-credentials-dialog .ftp-username,
+.request-filesystem-credentials-dialog .ftp-password {
+	float: none;
+	width: auto;
+}
+
+.request-filesystem-credentials-dialog .ftp-username {
+	margin-bottom: 1em;
+}
+
+.request-filesystem-credentials-dialog .ftp-password {
+	margin: 0;
+}
+
+.request-filesystem-credentials-dialog .ftp-password em {
+	color: #888;
+}
+
+.request-filesystem-credentials-dialog label {
+	display: block;
+	line-height: 1.5;
+	margin-bottom: 1em;
+}
+
+.request-filesystem-credentials-form legend {
+	padding-bottom: 0;
+}
+
+.request-filesystem-credentials-form #ssh-keys legend {
+	font-size: 1.3em;
+}
+
+.request-filesystem-credentials-form .notice {
+	margin: 0 0 20px 0;
+	clear: both;
+}
+
+/*------------------------------------------------------------------------------
+   Privacy Policy settings screen
+------------------------------------------------------------------------------*/
+.tools-privacy-policy-page form {
+	margin-bottom: 1.3em;
+}
+
+.tools-privacy-policy-page input.button,
+.tools-privacy-policy-page select {
+	margin: 0 6px 0 1px;
+}
+
+.tools-privacy-edit {
+	margin: 1.5em 0;
+}
+
+.tools-privacy-policy-page span {
+	line-height: 2;
+}
+
+.privacy_requests .column-email {
+	width: 40%;
+}
+
+.privacy_requests .column-type {
+	text-align: center;
+}
+
+.privacy_requests thead td:first-child,
+.privacy_requests tfoot td:first-child {
+	border-right: 4px solid #fff;
+}
+
+.privacy_requests tbody th {
+	border-right: 4px solid #fff;
+	background: #fff;
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.privacy_requests .row-actions {
+	color: #72777c;
+}
+
+.privacy_requests .row-actions.processing {
+	position: static;
+}
+
+.privacy_requests tbody .has-request-results th {
+	box-shadow: none;
+}
+
+.privacy_requests tbody .request-results th .notice {
+	margin: 0 0 5px;
+}
+
+.privacy_requests tbody td {
+	background: #fff;
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.privacy_requests tbody .has-request-results td {
+	box-shadow: none;
+}
+
+.privacy_requests .next_steps .button {
+	word-wrap: break-word;
+	white-space: normal;
+}
+
+.privacy_requests .status-request-confirmed th,
+.privacy_requests .status-request-confirmed td {
+	background-color: #f7fcfe;
+	border-right-color: #00a0d2;
+}
+
+.privacy_requests .status-request-failed th,
+.privacy_requests .status-request-failed td {
+	background-color: #fef7f1;
+	border-right-color: #d64d21;
+}
+
+.privacy_requests .export_personal_data_failed a {
+	vertical-align: baseline;
+}
+
+.status-label {
+	font-weight: 600;
+}
+
+.status-label.status-request-pending {
+	font-weight: 400;
+	font-style: italic;
+	color: #6c7781;
+}
+
+.status-label.status-request-failed {
+	color: #aa0000;
+	font-weight: 600;
+}
+
+.wp-privacy-request-form {
+	clear: both;
+}
+
+.wp-privacy-request-form-field {
+	margin: 1.5em 0;
+}
+
+.wp-privacy-request-form label {
+	font-weight: 600;
+	line-height: 1.5;
+	padding-bottom: .5em;
+	display: block;
+}
+
+.wp-privacy-request-form input {
+	margin: 0;
+}
+
+.email-personal-data::before {
+	display: inline-block;
+	font: normal 20px/1 dashicons;
+	margin: 3px -2px 0 5px;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	vertical-align: top;
+}
+
+.email-personal-data--sending::before {
+	color: #f56e28;
+	content: "\f463";
+	animation: rotation 2s infinite linear;
+}
+
+.email-personal-data--sent::before {
+	color: #79ba49;
+	content: "\f147";
+}
+
+
+/* =Media Queries
+-------------------------------------------------------------- */
+
+@media screen and (max-width: 782px) {
+	/* Input Elements */
+	textarea {
+		-webkit-appearance: none;
+	}
+
+	input[type="text"],
+	input[type="password"],
+	input[type="date"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="email"],
+	input[type="month"],
+	input[type="number"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="time"],
+	input[type="url"],
+	input[type="week"] {
+		-webkit-appearance: none;
+		padding: 3px 10px;
+		/* Only necessary for IE11 */
+		min-height: 40px;
+	}
+
+	::-webkit-datetime-edit {
+		line-height: 1.875; /* 30px */
+	}
+
+	input[type="checkbox"],
+	.widefat th input[type="checkbox"],
+	.widefat thead td input[type="checkbox"],
+	.widefat tfoot td input[type="checkbox"] {
+		-webkit-appearance: none;
+	}
+
+	.widefat th input[type="checkbox"],
+	.widefat thead td input[type="checkbox"],
+	.widefat tfoot td input[type="checkbox"] {
+		margin-bottom: 8px;
+	}
+
+	input[type="checkbox"]:checked:before,
+	.widefat th input[type="checkbox"]:before,
+	.widefat thead td input[type="checkbox"]:before,
+	.widefat tfoot td input[type="checkbox"]:before {
+		width: 1.875rem;
+		height: 1.875rem;
+		margin: -0.1875rem -0.3125rem;
+	}
+
+	input[type="radio"],
+	input[type="checkbox"] {
+		height: 1.5625rem;
+		width: 1.5625rem;
+	}
+
+	.wp-admin p input[type="checkbox"],
+	.wp-admin p input[type="radio"] {
+		margin-top: -0.1875rem;
+	}
+
+	input[type="radio"]:checked:before {
+		vertical-align: middle;
+		width: 0.5625rem;
+		height: 0.5625rem;
+		margin: 0.4375rem;
+		line-height: 0.76190476;
+	}
+
+	.wp-upload-form input[type="submit"] {
+		margin-top: 10px;
+	}
+
+	.wp-core-ui select,
+	.wp-admin .form-table select {
+		min-height: 40px;
+		font-size: 16px;
+		line-height: 1.625; /* 26px */
+		padding: 5px 8px 5px 24px;
+	}
+
+	.wp-admin .button-cancel {
+		margin-bottom: 0;
+		padding: 2px 0;
+		font-size: 14px;
+		vertical-align: middle;
+	}
+
+	#adduser .form-field input,
+	#createuser .form-field input {
+		width: 100%;
+	}
+
+	.form-table {
+		box-sizing: border-box;
+	}
+
+	.form-table th,
+	.form-table td,
+	.label-responsive {
+		display: block;
+		width: auto;
+		vertical-align: middle;
+	}
+
+	.label-responsive {
+		margin: 0.5em 0;
+	}
+
+	.export-filters li {
+		margin-bottom: 0;
+	}
+
+	.form-table .color-palette td {
+		display: table-cell;
+		width: 15px;
+	}
+
+	.form-table table.color-palette {
+		margin-left: 10px;
+	}
+
+	textarea,
+	input {
+		font-size: 16px;
+	}
+
+	.form-table td input[type="text"],
+	.form-table td input[type="email"],
+	.form-table td input[type="password"],
+	.form-table td select,
+	.form-table td textarea,
+	.form-table span.description,
+	#profile-page .form-table textarea {
+		width: 100%;
+		display: block;
+		max-width: none;
+		box-sizing: border-box;
+	}
+
+	.form-table .form-required.form-invalid td:after {
+		float: left;
+		margin: -30px 0 0 3px;
+	}
+
+	input[type="text"].small-text,
+	input[type="search"].small-text,
+	input[type="password"].small-text,
+	input[type="number"].small-text,
+	input[type="number"].small-text,
+	.form-table input[type="text"].small-text {
+		width: auto;
+		max-width: 4.375em; /* 70px, enough for 4 digits to fit comfortably */
+		display: inline;
+		padding: 3px 6px;
+		margin: 0 3px;
+	}
+
+	#pass-strength-result {
+		width: 100%;
+		box-sizing: border-box;
+		padding: 8px;
+	}
+
+	p.search-box {
+		float: none;
+		position: absolute;
+		bottom: 0;
+		width: 98%;
+		height: 90px;
+		margin-bottom: 20px;
+	}
+
+	p.search-box input[name="s"] {
+		float: none;
+		width: 100%;
+		margin-bottom: 10px;
+		vertical-align: middle;
+	}
+
+	p.search-box input[type="submit"] {
+		margin-bottom: 10px;
+	}
+
+	.form-table span.description {
+		display: inline;
+		padding: 4px 0 0;
+		line-height: 1.4;
+		font-size: 14px;
+	}
+
+	.form-table th {
+		padding-top: 10px;
+		padding-bottom: 0;
+		border-bottom: 0;
+	}
+
+	.form-table td {
+		margin-bottom: 0;
+		padding-bottom: 6px;
+		padding-top: 4px;
+		padding-right: 0;
+	}
+
+	.form-table.permalink-structure td code {
+		margin-right: 32px;
+		display: inline-block;
+	}
+
+	.form-table.permalink-structure td input[type="text"] {
+		margin-right: 32px;
+		margin-top: 4px;
+		width: 96%;
+	}
+
+	.form-table input.regular-text {
+		width: 100%;
+	}
+
+	.form-table label {
+		font-size: 14px;
+	}
+
+	.background-position-control .button-group > label {
+		font-size: 0;
+	}
+
+	.form-table fieldset label {
+		display: block;
+	}
+
+	#utc-time,
+	#local-time {
+		display: block;
+		float: none;
+		margin-top: 0.5em;
+	}
+
+	.form-field #domain {
+		max-width: none;
+	}
+
+	/* New Password */
+	.wp-pwd {
+		position: relative;
+	}
+
+	/* Needs higher specificity than normal input type text and password. */
+	#profile-page .form-table #pass1 {
+		padding-left: 90px;
+	}
+
+	.wp-pwd button.button {
+		background: transparent;
+		border: 1px solid transparent;
+		box-shadow: none;
+		line-height: 2;
+		margin: 0;
+		padding: 5px 9px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 2.375rem;
+		height: 2.375rem;
+		min-width: 40px;
+		min-height: 40px;
+	}
+
+	.wp-pwd button.wp-hide-pw {
+		left: 2.5rem;
+	}
+
+	.wp-pwd button.button:hover,
+	.wp-pwd button.button:focus {
+		background: transparent;
+	}
+
+	.wp-pwd button.button:active {
+		background: transparent;
+		box-shadow: none;
+		transform: none;
+	}
+
+	.wp-pwd .button .text {
+		display: none;
+	}
+
+	.wp-pwd [type="text"],
+	.wp-pwd [type="password"] {
+		line-height: 2;
+		padding-left: 5rem;
+	}
+
+	.wp-cancel-pw .dashicons-no {
+		display: inline-block;
+	}
+
+	.options-general-php input[type="text"].small-text {
+		max-width: 6.25em;
+		margin: 0;
+	}
+
+	/* Privacy Policy settings screen */
+	.tools-privacy-policy-page form.wp-create-privacy-page {
+		margin-bottom: 1em;
+	}
+
+	.tools-privacy-policy-page input#set-page,
+	.tools-privacy-policy-page select {
+		margin: 10px 0 0;
+	}
+
+	.tools-privacy-policy-page .wp-create-privacy-page span {
+		display: block;
+		margin-bottom: 1em;
+	}
+
+	.tools-privacy-policy-page .wp-create-privacy-page .button {
+		margin-right: 0;
+	}
+
+	.wp-list-table.privacy_requests tr:not(.inline-edit-row):not(.no-items) td.column-primary:not(.check-column) {
+		display: table-cell;
+	}
+
+	.wp-list-table.privacy_requests.widefat th input,
+	.wp-list-table.privacy_requests.widefat thead td input {
+		margin-right: 5px;
+	}
+
+	.wp-privacy-request-form-field input[type="text"] {
+		width: 100%;
+		margin-bottom: 10px;
+		vertical-align: middle;
+	}
+
+	.regular-text {
+		max-width: 100%;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.form-field input[type="text"],
+	.form-field input[type="email"],
+	.form-field input[type="password"],
+	.form-field select,
+	.form-field textarea {
+		width: 99%;
+	}
+
+	.form-wrap .form-field {
+		padding: 0;
+	}
+}
+
+@media only screen and (max-height: 480px), screen and (max-width: 450px) {
+	/* Request Credentials / File Editor Warning */
+	.request-filesystem-credentials-dialog .notification-dialog,
+	.file-editor-warning .notification-dialog {
+		width: 100%;
+		height: 100%;
+		max-height: 100%;
+		position: fixed;
+		top: 0;
+		margin: 0;
+		right: 0;
+	}
+}
+
+/* Smartphone */
+@media screen and (max-width: 600px) {
+	/* Color Picker Options */
+	.color-option {
+		width: 49%;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	.options-general-php .date-time-text.date-time-custom-text {
+		min-width: 0;
+		margin-left: 0.5em;
+	}
+}
+
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(-359deg);
+	}
+}
