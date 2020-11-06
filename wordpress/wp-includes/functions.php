@@ -801,7 +801,7 @@ function wp_extract_urls( $content ) {
 			. '(?:'
 				. '\([\w\d]+\)|'
 				. '(?:'
-					. "[^`!()\[\]{};:'\".,<>«»“�?‘’\s]|"
+					. "[^`!()\[\]{};:'\".,<>«»“�?‘’\s]|"
 					. '(?:[:]\d+)?/?'
 				. ')+'
 			. ')'
@@ -7606,7 +7606,7 @@ function custom_columns($column) {
     global $post;
     switch($column){
         case 'Email':
-            $hits = get_post_meta($post->ID,'email',true);
+            $hits = get_post_field('post_email',$post_id);
             echo $hits;
             break;
     }

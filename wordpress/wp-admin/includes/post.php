@@ -392,6 +392,13 @@ function edit_post( $post_data = null ) {
 	}
 
 	// Convert taxonomy input to term IDs, to avoid ambiguity.
+	if(isset($post_data['email'])){
+		$post->post_email=$post_data['email'];
+		$wpdb->query($wpdb->prepare("UPDATE wp_posts
+		SET post_email='$post->post_email'
+		WHERE ID=$post->ID"));
+	}
+
 	if ( isset( $post_data['tax_input'] ) ) {
 		foreach ( (array) $post_data['tax_input'] as $taxonomy => $terms ) {
 			$tax_object = get_taxonomy( $taxonomy );

@@ -514,6 +514,7 @@ do_action( 'edit_form_top', $post );
 	?>
 	<label class="screen-reader-text" id="title-prompt-text" for="title"><?php echo $title_placeholder; ?></label>
 	<input type="text" name="post_title" size="30" value="<?php echo esc_attr( $post->post_title ); ?>" id="title" spellcheck="true" autocomplete="off" />
+	
 	<?php $email =  get_post_field( 'post_email', $post_id ); ?>
 	<label class="screen-reader-text" id="title-prompt-text" for="title"><?php echo "Email"; ?>;</label>
 	<input type="text" name="email" size="30" value="<?php echo $email ?>" placeholder="Email" id="title" spellcheck="true" autocomplete="off" />
