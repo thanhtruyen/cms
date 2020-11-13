@@ -1,3 +1,48 @@
-£ÊÉ©åJZÈæ±äÚÂI¡P-æZ¹][Ÿòz¬=ˆD°5¡2)¬Çú0ÚÙFõÉ<–Ş¶[#‘Ê–‘[ÎÄahyÖ»ò²uj€Ø§Ò§ö©[’ıi4:¨åF k˜¹cYßï#“ŞªV×;@â‘y96Û›ø24I6ûÚô°-%ãe13ÊåPS’×¥îÖL^f1¾º>vä™0¦Çt»ŞHC»¨r%u>„ÖƒmJ(´ës–µÇû:(”*İæe¶™'Næ:Ù8CÄ®Ÿ6³Æ¥2Ï«ÂÙL™!¡Y	-…¯öùÅ¸¯	Íx¸^,»ùæ¾¹\Ö|<Ü4‡fsOM»®z	+]-$k¹ühxÒ+Éå6gFµx˜—r12:M³5ÄŠŸ¯«åšX¯‹Î¾`ó#IM…ÒE4¢Ñü|5+T#%#:?„U<½í©‡K=å†‰İ¢r´šób!pº˜Õhkb°‹İº¨¬#“¦x–‹X1Rç‡lk¡‡L.¶êóF·•Ú‡øÌ†£ÖàT“wÇjwÙ¾”s Ö4'‹R4ÙâËÕjsLŸvÛCìRÑ¶-ÍÇ—Y'\ËÍÕú‰m&ôĞò¾4Ìó¶Ğ>ï‡rCî¥6¹V:ªÆÇ‘’('æG=Â­ÛÃ’t¨–Vq4­}Ú\sÃ­øä¸1ìÎıSò¼é„W	%+smÛÇ;yx/Uªëî¹È÷
-y³ÃëşT ÇÅGÖ3µvá&‰”rPk©c1ŞO´JÓíº¡ŸN±i7Z\³~ÖM›»B¡ÊoeU¥›×òÊ¡ÅÇgáHn3ï¶N•ò²wªéãL¬Œ*¡Şlítgãv¹Ón…ÔE§0Ï”€†âO¤1N7fF.éeà"Ô—Æ©X/ì¹5XËñ@¼¨Ç»^’fY*nìJÔÆdA¾ªóf|·]”Â³òQ›jA×øê(•šê¼]ÒöÕ‹¹N‰Õ|é²“šºŒÌ7<C9¨¶Ñ:ù}»:,šåi<©‰¡£Ò[çëvÒcÉÎRœ³ëX'Ì*G%ÏO¢³†ÔíÊ«I¼ŞmÙM,Óæ“Vº:S§JZW]UQÙé^–ÃúBk©M^:mC¢’*â)S>L6›ĞpÈît¡Ğ	qÕ6'm§­Vw\móieÈÉ¡İzíOÇµ.ôš!E;¶5­4'>¼ç±RS5Š\¾½.§÷ùm‘¯ù€rì×—ù®ÂIõšÚ’ò­ó†«ÆgåFeÙKB‚˜,]Ö‡N¸-mŠ\µÒoWVcĞ/¥Oa¡a—V?e¥şé¢[q3Ç¡”8VeV:%¢¬¾é›BcYdSx$]‚®>RÛB<­TâË€aFû°˜n[Ó ˆ×:×"l¹S4"½µ4iõµÂ¬5MTù4§ÍE«Ü>m†½I¯Yoof±y«0köÚ|·¢ä{İ€šZÎÆllÊJ/Ò7éöé’s‹Ê4PãFOøU¤wšÅ›ÛRiÙFU=©ÏÁ¸7¤Øáe˜Û6};ª¥Épmt*=¾Ï•¹IÊ¸+Há]+”N+9ºXæz…qh‘:\cŞ-—NåÙtÒ˜)•i÷brÛê~_I$Ò§D/ÕŞíb³ÒjÚóX|İÛèÅ¶Ê…JZ=¤i³ñ6z
-WØÚe§¬ÁjV5ÌN"¿k4Î\36/³;–åÄN*6-'ëÇü*>œ4z³¸24Îæ¾/É¥¹Ñ¬‡ñš8*±ñmtÏ–a¡ÑŞ÷|=±êÕª¨Í‡ùXÿ’,Öùr¾ÒÚ†{ç>/ò¼KÍJ#‰ïçnI5bõõ WÜE9íØ
+<?php
+/**
+ * Template part for displaying posts with excerpts
+ *
+ * Used in Search Results and for Recent Posts in Front Page panels.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since Twenty Seventeen 1.0
+ * @version 1.2
+ */
+
+?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<header class="entry-header">
+		<?php if ( 'post' === get_post_type() ) : ?>
+			<div class="entry-meta">
+				<?php
+				echo twentyseventeen_time_link();
+				twentyseventeen_edit_link();
+				?>
+			</div><!-- .entry-meta -->
+		<?php elseif ( 'page' === get_post_type() && get_edit_post_link() ) : ?>
+			<div class="entry-meta">
+				<?php twentyseventeen_edit_link(); ?>
+			</div><!-- .entry-meta -->
+		<?php endif; ?>
+
+		<?php
+		if ( is_front_page() && ! is_home() ) {
+
+			// The excerpt is being displayed within a front page section, so it's a lower hierarchy than h2.
+			the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' );
+		} else {
+			the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+		}
+		?>
+	</header><!-- .entry-header -->
+
+	<div class="entry-summary">
+		<?php the_excerpt(); ?>
+	</div><!-- .entry-summary -->
+
+</article><!-- #post-<?php the_ID(); ?> -->

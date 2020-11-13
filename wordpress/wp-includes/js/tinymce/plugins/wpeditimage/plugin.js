@@ -703,5 +703,198 @@ tinymce.PluginManager.add( 'wpeditimage', function( editor ) {
 					 * Prevent pasting in there as it will break the caption.
 					 * Make new paragraph under the caption DL and move the caret there.
 					 */
-					p = talBytesLimit() in net/proto2/io/public/coded_stream.h. CHECK failed: (buffer_size) >= (0):  ../../third_party/protobuf/src/google/protobuf/arena.cc CHECK failed: (min_bytes) <= (std::numeric_limits<size_t>::max() - kBlockHeaderSize):  ImportantFile.FileCreateError ImportantFile.FileWriteError error writing, bytes_written= ImportantFile.FileRenameError ImportantFileWriter::WriteNow ../../base/files/important_file_writer.cc WriteNow ScheduleWrite ImportantFile.DeleteOnCloseError ImportantFile.FileDeleteRetryExceededError DeleteTmpFileWithRetry ImportantFile.FileDeleteNoRetryError ImportantFile.FileDeleteRetrySuccessCount ../../components/prefs/persistent_pref_store.cc             êÎX ¿ŒX –ŒX œX `·X `‚X 0‰X ê‰X –ÈX 0ÁX ∞ÍX ê6M @ÊX r e p o r t s   s e t t i n g s . d a t   d m p   ../../third_party/crashpad/crashpad/client/crash_report_database_win.cc DeleteFile  CreateDirectory  GetFileAttributes  : not a directory m e t a d a t a   LockFileEx failed to rewind to read failed to read header unexpected header record size out of range failed to read records bad string table invalid string table index failed to stat report UnlockFileEx failed to rewind to write failed to truncate failed to write header  expected to start with  failed to write records failed to write string table ../../third_party/crashpad/crashpad/client/settings.cc Settings magic is not  Settings version is not  Invalid file handle   †˙X restart_cmd_line_key_ %s%zu %08x-%04x-%04x-%02x%02x-%02x%02x%02x%02x%02x%02x ../../third_party/crashpad/crashpad/util/win/scoped_handle.cc CloseHandle ../../third_party/crashpad/crashpad/util/win/registration_protocol_win.cc CreateFile WaitNamedPipe SetNamedPipeHandleState TransactNamedPipe TransactNamedPipe: expected  , observed      Ä                                   D : ( A ; ; G A ; ; ; S Y ) ( A ; ; G W G R ; ; ; S - 1 - 1 5 - 2 - 1 ) S : ( M L ; ; ; ; ; S - 1 - 1 6 - 0 )   ConvertStringSecurityDescriptorToSecurityDescriptor C U R R E N T _ U S E R   BuildSecurityDescriptor ::InitializeCriticalSectionEx ../../third_party/crashpad/crashpad/util/win/critical_section_with_debug_info.cc InitializeCriticalSectionEx    	 
-  "   ../../third_party/crashpad/crashpad/util/win/initial_client_data.cc expected 8 comma separated arguments 0x%x,0x%x,0x%x,0x%x,0x%x,0x%I64x,0x%I64x,0x%I64x could not convert ' ' to HANDLE ' to WinVMAddress ../../third_party/crashpad/crashpad/util/win/process_info.cc VirtualQueryEx RegionSize == 0 UncheckedAllocate NtQuerySystemInformation SystemExtendedHandleInformation Reading x64 process from x86 process not supported GetProcessBasicInformation failed ReadProcessData failed ReadMemoryInfo failed range at 0x%llx, size 0x%llx fully unreadable range at 0x%llx, size 0x%llx partially unreadable ::IsWow64Process IsWow64Process ::NtQueryInformationProcess NtQueryInformationProcess NtQueryInformationProcess incorrect size peb address 0x%llx out of range ? ? ?   ReadProcessMemory  bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::PEB<crashpad::process_types::internal::Traits64>]  incorrect size bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::RTL_USER_PROCESS_PARAMETERS<crashpad::process_types::internal::Traits64>] ReadProcessMemory UNICODE_STRING ReadProcessMemory UNICODE_STRING incorrect size bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::PEB_LDR_DATA<crashpad::process_types::internal::Traits64>] bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::LDR_DATA_TABLE_ENTRY<crashpad::process_types::internal::Traits64>] bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::PEB<crashpad::process_types::internal::Traits32>] bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::RTL_USER_PROCESS_PARAMETERS<crashpad::process_types::internal::Traits32>] bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::PEB_LDR_DATA<crashpad::process_types::internal::Traits32>] bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::LDR_DATA_TABLE_ENTRY<crashpad::process_types::internal::Traits32>] ../../third_party/crashpad/crashpad/util/win/scoped_process_suspend.cc NtSuspendProcess NtResumeProcess ::NtOpenThread ::NtQuerySystemInformation ::NtQueryInformationThread ::NtQueryObject ::NtSuspendProcess ::NtResumeProcess ::RtlGetUnloadEventTraceEx  êGY  (0x%08lx) <failed to retrieve error message (0x%lx)>   H@ GY 0IY êIY \Y B\Y _\Y \Y                                  C   CCCCG__  OOOOOOCCCCCCCCCCCCCCCCCGCCCOOOOOOCCCCCCCCCCCCCCCCCGCCC                                                                                                                                 0123456789ABCD
+					p = dom.create( 'p' );
+					dom.insertAfter( p, captionParent );
+					editor.selection.setCursorLocation( p, 0 );
+
+					/*
+					 * If the image is selected and the user pastes "over" it,
+					 * replace both the image and the caption elements with the pasted content.
+					 * This matches the behavior when pasting over non-caption images.
+					 */
+					if ( node.nodeName === 'IMG' ) {
+						editor.$( captionParent ).remove();
+					}
+
+					editor.nodeChanged();
+				} else {
+					// Clicking Indent or Outdent while an image with a caption is selected breaks the caption.
+					// See #38313.
+					event.preventDefault();
+					event.stopImmediatePropagation();
+					return false;
+				}
+			}
+		} else if ( cmd === 'JustifyLeft' || cmd === 'JustifyRight' || cmd === 'JustifyCenter' || cmd === 'wpAlignNone' ) {
+			node = editor.selection.getNode();
+			align = 'align' + cmd.slice( 7 ).toLowerCase();
+			DL = editor.dom.getParent( node, '.wp-caption' );
+
+			if ( node.nodeName !== 'IMG' && ! DL ) {
+				return;
+			}
+
+			node = DL || node;
+
+			if ( editor.dom.hasClass( node, align ) ) {
+				replacement = ' alignnone';
+			} else {
+				replacement = ' ' + align;
+			}
+
+			node.className = trim( node.className.replace( / ?align(left|center|right|none)/g, '' ) + replacement );
+
+			editor.nodeChanged();
+			event.preventDefault();
+
+			if ( toolbar ) {
+				toolbar.reposition();
+			}
+
+			editor.fire( 'ExecCommand', {
+				command: cmd,
+				ui: event.ui,
+				value: event.value
+			} );
+		}
+	});
+
+	editor.on( 'keydown', function( event ) {
+		var node, wrap, P, spacer,
+			selection = editor.selection,
+			keyCode = event.keyCode,
+			dom = editor.dom,
+			VK = tinymce.util.VK;
+
+		if ( keyCode === VK.ENTER ) {
+			// When pressing Enter inside a caption move the caret to a new parapraph under it.
+			node = selection.getNode();
+			wrap = dom.getParent( node, 'div.mceTemp' );
+
+			if ( wrap ) {
+				dom.events.cancel( event ); // Doesn't cancel all :(
+
+				// Remove any extra dt and dd cleated on pressing Enter...
+				tinymce.each( dom.select( 'dt, dd', wrap ), function( element ) {
+					if ( dom.isEmpty( element ) ) {
+						dom.remove( element );
+					}
+				});
+
+				spacer = tinymce.Env.ie && tinymce.Env.ie < 11 ? '' : '<br data-mce-bogus="1" />';
+				P = dom.create( 'p', null, spacer );
+
+				if ( node.nodeName === 'DD' ) {
+					dom.insertAfter( P, wrap );
+				} else {
+					wrap.parentNode.insertBefore( P, wrap );
+				}
+
+				editor.nodeChanged();
+				selection.setCursorLocation( P, 0 );
+			}
+		} else if ( keyCode === VK.DELETE || keyCode === VK.BACKSPACE ) {
+			node = selection.getNode();
+
+			if ( node.nodeName === 'DIV' && dom.hasClass( node, 'mceTemp' ) ) {
+				wrap = node;
+			} else if ( node.nodeName === 'IMG' || node.nodeName === 'DT' || node.nodeName === 'A' ) {
+				wrap = dom.getParent( node, 'div.mceTemp' );
+			}
+
+			if ( wrap ) {
+				dom.events.cancel( event );
+				removeImage( node );
+				return false;
+			}
+		}
+	});
+
+	/*
+	 * After undo/redo FF seems to set the image height very slowly when it is set to 'auto' in the CSS.
+	 * This causes image.getBoundingClientRect() to return wrong values and the resize handles are shown in wrong places.
+	 * Collapse the selection to remove the resize handles.
+	 */
+	if ( tinymce.Env.gecko ) {
+		editor.on( 'undo redo', function() {
+			if ( editor.selection.getNode().nodeName === 'IMG' ) {
+				editor.selection.collapse();
+			}
+		});
+	}
+
+	editor.wpSetImgCaption = function( content ) {
+		return parseShortcode( content );
+	};
+
+	editor.wpGetImgCaption = function( content ) {
+		return getShortcode( content );
+	};
+
+	editor.on( 'beforeGetContent', function( event ) {
+		if ( event.format !== 'raw' ) {
+			editor.$( 'img[id="__wp-temp-img-id"]' ).removeAttr( 'id' );
+		}
+	});
+
+	editor.on( 'BeforeSetContent', function( event ) {
+		if ( event.format !== 'raw' ) {
+			event.content = editor.wpSetImgCaption( event.content );
+		}
+	});
+
+	editor.on( 'PostProcess', function( event ) {
+		if ( event.get ) {
+			event.content = editor.wpGetImgCaption( event.content );
+		}
+	});
+
+	( function() {
+		var wrap;
+
+		editor.on( 'dragstart', function() {
+			var node = editor.selection.getNode();
+
+			if ( node.nodeName === 'IMG' ) {
+				wrap = editor.dom.getParent( node, '.mceTemp' );
+
+				if ( ! wrap && node.parentNode.nodeName === 'A' && ! hasTextContent( node.parentNode ) ) {
+					wrap = node.parentNode;
+				}
+			}
+		} );
+
+		editor.on( 'drop', function( event ) {
+			var dom = editor.dom,
+				rng = tinymce.dom.RangeUtils.getCaretRangeFromPoint( event.clientX, event.clientY, editor.getDoc() );
+
+			// Don't allow anything to be dropped in a captioned image.
+			if ( rng && dom.getParent( rng.startContainer, '.mceTemp' ) ) {
+				event.preventDefault();
+			} else if ( wrap ) {
+				event.preventDefault();
+
+				editor.undoManager.transact( function() {
+					if ( rng ) {
+						editor.selection.setRng( rng );
+					}
+
+					editor.selection.setNode( wrap );
+					dom.remove( wrap );
+				} );
+			}
+
+			wrap = null;
+		} );
+	} )();
+
+	// Add to editor.wp.
+	editor.wp = editor.wp || {};
+	editor.wp.isPlaceholder = isPlaceholder;
+
+	// Back-compat.
+	return {
+		_do_shcode: parseShortcode,
+		_get_shcode: getShortcode
+	};
+});

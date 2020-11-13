@@ -159,8 +159,6 @@ var modern = (function (domGlobals) {
     var never = constant(false);
     var always = constant(true);
 
-    var never$1 = never;
-    var always$1 = always;
     var none = function () {
       return NONE;
     };
@@ -174,37 +172,27 @@ var modern = (function (domGlobals) {
       var id = function (n) {
         return n;
       };
-      var noop = function () {
-      };
-      var nul = function () {
-        return null;
-      };
-      var undef = function () {
-        return undefined;
-      };
       var me = {
         fold: function (n, s) {
           return n();
         },
-        is: never$1,
-        isSome: never$1,
-        isNone: always$1,
+        is: never,
+        isSome: never,
+        isNone: always,
         getOr: id,
         getOrThunk: call,
         getOrDie: function (msg) {
           throw new Error(msg || 'error: getOrDie called on none.');
         },
-        getOrNull: nul,
-        getOrUndefined: undef,
+        getOrNull: constant(null),
+        getOrUndefined: constant(undefined),
         or: id,
         orThunk: call,
         map: none,
-        ap: none,
         each: noop,
         bind: none,
-        flatten: none,
-        exists: never$1,
-        forall: always$1,
+        exists: never,
+        forall: always,
         filter: none,
         equals: eq,
         equals_: eq,
@@ -219,14 +207,9 @@ var modern = (function (domGlobals) {
       return me;
     }();
     var some = function (a) {
-      var constant_a = function () {
-        return a;
-      };
+      var constant_a = constant(a);
       var self = function () {
         return me;
-      };
-      var map = function (f) {
-        return some(f(a));
       };
       var bind = function (f) {
         return f(a);
@@ -238,8 +221,8 @@ var modern = (function (domGlobals) {
         is: function (v) {
           return a === v;
         },
-        isSome: always$1,
-        isNone: never$1,
+        isSome: always,
+        isNone: never,
         getOr: constant_a,
         getOrThunk: constant_a,
         getOrDie: constant_a,
@@ -247,35 +230,31 @@ var modern = (function (domGlobals) {
         getOrUndefined: constant_a,
         or: self,
         orThunk: self,
-        map: map,
-        ap: function (optfab) {
-          return optfab.fold(none, function (fab) {
-            return some(fab(a));
-          });
+        map: function (f) {
+          return some(f(a));
         },
         each: function (f) {
           f(a);
         },
         bind: bind,
-        flatten: constant_a,
         exists: bind,
         forall: bind,
         filter: function (f) {
           return f(a) ? me : NONE;
-        },
-        equals: function (o) {
-          return o.is(a);
-        },
-        equals_: function (o, elementEq) {
-          return o.fold(never$1, function (b) {
-            return elementEq(a, b);
-          });
         },
         toArray: function () {
           return [a];
         },
         toString: function () {
           return 'some(' + a + ')';
+        },
+        equals: function (o) {
+          return o.is(a);
+        },
+        equals_: function (o, elementEq) {
+          return o.fold(never, function (b) {
+            return elementEq(a, b);
+          });
         }
       };
       return me;
@@ -685,44 +664,45 @@ var modern = (function (domGlobals) {
     var isFunction = isType('function');
     var isNumber = isType('number');
 
-    var slice = Array.prototype.slice;
-    var rawIndexOf = function () {
-      var pIndexOf = Array.prototype.indexOf;
-      var fastIndex = function (xs, x) {
-        return pIndexOf.call(xs, x);
-      };
-      var slowIndex = function (xs, x) {
-        return slowIndexOf(xs, x);
-      };
-      return pIndexOf === undefined ? slowIndex : fastIndex;
-    }();
+    var nativeSlice = Array.prototype.slice;
+    var nativeIndexOf = Array.prototype.indexOf;
+    var nativePush = Array.prototype.push;
+    var rawIndexOf = function (ts, t) {
+      return nativeIndexOf.call(ts, t);
+    };
     var indexOf = function (xs, x) {
       var r = rawIndexOf(xs, x);
       return r === -1 ? Option.none() : Option.some(r);
     };
     var exists = function (xs, pred) {
-      return findIndex(xs, pred).isSome();
+      for (var i = 0, len = xs.length; i < len; i++) {
+        var x = xs[i];
+        if (pred(x, i)) {
+          return true;
+        }
+      }
+      return false;
     };
     var map = function (xs, f) {
       var len = xs.length;
       var r = new Array(len);
       for (var i = 0; i < len; i++) {
         var x = xs[i];
-        r[i] = f(x, i, xs);
+        r[i] = f(x, i);
       }
       return r;
     };
     var each = function (xs, f) {
       for (var i = 0, len = xs.length; i < len; i++) {
         var x = xs[i];
-        f(x, i, xs);
+        f(x, i);
       }
     };
     var filter = function (xs, pred) {
       var r = [];
       for (var i = 0, len = xs.length; i < len; i++) {
         var x = xs[i];
-        if (pred(x, i, xs)) {
+        if (pred(x, i)) {
           r.push(x);
         }
       }
@@ -737,7 +717,7 @@ var modern = (function (domGlobals) {
     var find = function (xs, pred) {
       for (var i = 0, len = xs.length; i < len; i++) {
         var x = xs[i];
-        if (pred(x, i, xs)) {
+        if (pred(x, i)) {
           return Option.some(x);
         }
       }
@@ -746,33 +726,24 @@ var modern = (function (domGlobals) {
     var findIndex = function (xs, pred) {
       for (var i = 0, len = xs.length; i < len; i++) {
         var x = xs[i];
-        if (pred(x, i, xs)) {
+        if (pred(x, i)) {
           return Option.some(i);
         }
       }
       return Option.none();
     };
-    var slowIndexOf = function (xs, x) {
-      for (var i = 0, len = xs.length; i < len; ++i) {
-        if (xs[i] === x) {
-          return i;
-        }
-      }
-      return -1;
-    };
-    var push = Array.prototype.push;
     var flatten = function (xs) {
       var r = [];
       for (var i = 0, len = xs.length; i < len; ++i) {
         if (!isArray(xs[i])) {
           throw new Error('Arr.flatten item ' + i + ' was not an array, input: ' + xs);
         }
-        push.apply(r, xs[i]);
+        nativePush.apply(r, xs[i]);
       }
       return r;
     };
     var from$1 = isFunction(Array.from) ? Array.from : function (x) {
-      return slice.call(x);
+      return nativeSlice.call(x);
     };
 
     var defaultMenus = {
@@ -828,11 +799,11 @@ var modern = (function (domGlobals) {
       var menuItemsPass1 = filter(namedMenuItems, function (namedMenuItem) {
         return removedMenuItems.hasOwnProperty(namedMenuItem.name) === false;
       });
-      var menuItemsPass2 = filter(menuItemsPass1, function (namedMenuItem, i, namedMenuItems) {
-        return !isSeparator(namedMenuItem) || !isSeparator(namedMenuItems[i - 1]);
+      var menuItemsPass2 = filter(menuItemsPass1, function (namedMenuItem, i) {
+        return !isSeparator(namedMenuItem) || !isSeparator(menuItemsPass1[i - 1]);
       });
-      return filter(menuItemsPass2, function (namedMenuItem, i, namedMenuItems) {
-        return !isSeparator(namedMenuItem) || i > 0 && i < namedMenuItems.length - 1;
+      return filter(menuItemsPass2, function (namedMenuItem, i) {
+        return !isSeparator(namedMenuItem) || i > 0 && i < menuItemsPass2.length - 1;
       });
     };
     var createMenu = function (editorMenuItems, menus, removedMenuItems, context) {
@@ -1771,7 +1742,7 @@ var modern = (function (domGlobals) {
     });
 
     var Collection$1, proto;
-    var push$1 = Array.prototype.push, slice$1 = Array.prototype.slice;
+    var push = Array.prototype.push, slice = Array.prototype.slice;
     proto = {
       length: 0,
       init: function (items) {
@@ -1785,10 +1756,10 @@ var modern = (function (domGlobals) {
           if (items instanceof Collection$1) {
             self.add(items.toArray());
           } else {
-            push$1.call(self, items);
+            push.call(self, items);
           }
         } else {
-          push$1.apply(self, items);
+          push.apply(self, items);
         }
         return self;
       },
@@ -1825,7 +1796,7 @@ var modern = (function (domGlobals) {
         return new Collection$1(matches);
       },
       slice: function () {
-        return new Collection$1(slice$1.apply(this, arguments));
+        return new Collection$1(slice.apply(this, arguments));
       },
       eq: function (index) {
         return index === -1 ? this.slice(index) : this.slice(index, +index + 1);
@@ -7679,11 +7650,11 @@ var modern = (function (domGlobals) {
       return menuItem && menuItem.text === '-';
     };
     var trimMenuItems = function (menuItems) {
-      var menuItems2 = filter(menuItems, function (menuItem, i, menuItems) {
+      var menuItems2 = filter(menuItems, function (menuItem, i) {
         return !isSeparator$1(menuItem) || !isSeparator$1(menuItems[i - 1]);
       });
-      return filter(menuItems2, function (menuItem, i, menuItems) {
-        return !isSeparator$1(menuItem) || i > 0 && i < menuItems.length - 1;
+      return filter(menuItems2, function (menuItem, i) {
+        return !isSeparator$1(menuItem) || i > 0 && i < menuItems2.length - 1;
       });
     };
     var createContextMenuItems = function (editor, context) {
@@ -9452,30 +9423,185 @@ var modern = (function (domGlobals) {
           style.top = rect.y + 'px';
           lastRepaintRect.y = rect.y;
         }
-        if (rect.w !=ƒ| ”‹Eèd£    ‰ğƒÄ^_[]Â UPƒÅMàè›/  ƒÄ]ÃU‰åSWVƒìUè‰È‰büÇBÿÿÿÿÇBà£d‹    ‰
-d‰    ‹‹Iƒ| t[ÇEğ    MØ‰EàPèT  €}Ø t7‹Mà‹‹@‹L‹‹@ÇEğ   ÿĞƒøÿu‹Uà‹‹@‹DƒÈPèg  MØè©ÿâÿ‹Eà‹Mèd‰    ƒÄ^_[]ÃƒÅ‹EàéãÿÿÿUƒìƒÅMØèyÿâÿƒÄ]ÃUƒìƒÅ‰eä‹Mà‹‹@ƒLöDu
-¸ØŒƒÄ]Ã1ÀÇEğ   PPè*²	 U‰åV‹u‰ÈƒÀ‰ñPèÖ ‰ğ^]Â ÌU‰åÿuQè   ƒÄ]Â U‰åSWVƒì$Eè‹}uÜ‰`üÇ@ÿÿÿÿÇ@ğ£d‹    ‰d£    1À‰ñ‰EàPWèıÿÿ€> t{‹uØ‰ñ‹@DPèb ÇEğ   ‰ñh0—:è ‹]‹8‹‹Q‰ÁEÔ4PEàPVj ÿtEĞPÿW,‹uMØèË-  ‹EÔ‰‹}‹‹@‹DÇEğÿÿÿÿEàPè  ‹Eèd£    ‰øƒÄ$^_[]ÃƒÅéÆÿÿÿUƒìƒÅ‰eä‹U‹EàƒÈ‰Eà‹
-‹I	D
-‹‹@öDu
-¸2ƒÄ]Ã1ÀÇEğ   PPèÛ°	 UƒìƒÅMØè8-  ƒÄ]ÃÌU‰åÿuQè   ƒÄ]Â U‰åSWVƒì Eè‹}uÜ‰`üÇ@ÿÿÿÿÇ@ ¤d‹    ‰d£    1À‰ñ‰EàPWèÍûÿÿ€> tr‹uØ‰ñ‹@DPè ÇEğ   ‰ñh0—:è½ ‹]‹8‹‹Q‰Á4ÿuEàPVj ÿtEÔPÿW MØè‡,  ‹}‹‹@‹DÇEğÿÿÿÿEàPèÄ  ‹Eèd£    ‰øƒÄ ^_[]ÃƒÅéÆÿÿÿUƒìƒÅMØè>,  ƒÄ]ÃUƒìƒÅ‰eä‹U‹EàƒÈ‰Eà‹
-‹I	D
-‹‹@öDu
-¸qƒÄ]Ã1ÀÇEğ   PPèˆ¯	 U‰åSWVƒìUè‰È‰büÇBÿÿÿÿÇB¤d‹    ‰
-d‰    ‹‹Iƒ| t[ÇEğ    MØ‰EàPèZ  €}Ø t7‹Mà‹‹@‹L‹‹@ÇEğ   ÿĞƒøÿu‹Uà‹‹@‹DƒÈPèÅ  MØèG  ‹Eà‹Mèd‰    ƒÄ^_[]ÃƒÅ‹EàéãÿÿÿUƒìƒÅMØè  ƒÄ]ÃUƒìƒÅ‰eä‹Mà‹‹@ƒLöDu
-¸zƒÄ]Ã1ÀÇEğ   PPèˆ®	 U‰åV‹EÆ ‰Î‰A‹‹Iƒ| u‹LH…Étè6ûÿÿÆ‰ğ^]Â U‰åSWVƒì(Eè‰Mà‰`üÇ@ÿÿÿÿÇ@ ¤d‹    ‰d£    ÆEÔ ‰MØ‹‹@ƒ| …ö   ‹Uà‹LH…ÉtÇEğ    èÏúÿÿ‹Uà‹‹@DuÜÆEÔ‰ñPè ÇEğ   ‰ñh@—:èA
- MÜ‰Çè-*  ‹uà‹‹H‹DLƒøÿuPñuÜ‰}ÌA‰MĞ‰ñPèZ ÇEğ   ‰ñhğ—:èı	 ‹‰Áj ÿRMÜ‰Ãèà)  ‹MĞ‹uà¾Ã‹}Ì‰AL‹‹I‹t‰ù‹?Š]¾À‹$¶ÛÇEğ   SPRVEÜPÿ×ƒ}Ü u‹Uà‹‹@‹DƒÈPèâ  MÔè$úâÿ‹Eèd£    ‹EàƒÄ(^_[]Â ƒÅéâÿÿÿUƒìƒÅMÜèQ)  ƒÄ]ÃUƒìƒÅMÔèãùâÿƒÄ]ÃUƒìƒÅ‰eä‹Mà‹‹@ƒLöDu
-¸^’ƒÄ]Ã1ÀÇEğ   PPè”¬	 UƒìƒÅMÜèñ(  ƒÄ]ÃU‰åSWVƒì(Eè‰Mà‰`üÇ@ÿÿÿÿÇ@0¤d‹    ‰d£    ÆEĞ ‰MÔ‹‹@ƒ| …ø   ‹Uà‹LH…ÉtÇEğ    èùøÿÿ‹Uà‹‹@DuÜÆEĞ‰ñPèÈ ÇEğ   ‰ñh@—:èk MÜ‰ÃèW(  ‹}à‹‹H‹DLƒøÿuPùuÜ‰]ØA‰MÌ‰ñPè„ ÇEğ   ‰ñhğ—:è' ‹‰Áj ÿRMÜ‰Ãè
-(  ‹MÌ‹}à¾Ã‹]Ø‰AL‹‹I4‹|‹·U¾À‹IÇEğ   ‰MØ‰ÙRPVWEÜPÿUØƒ}Ü u‹Uà‹‹@‹DƒÈPè
-  MĞèLøâÿ‹Eèd£    ‹EàƒÄ(^_[]Â ƒÅéâÿÿÿUƒìƒÅMÜèy'  ƒÄ]ÃUƒìƒÅMĞèøâÿƒÄ]ÃUƒìƒÅ‰eä‹Mà‹‹@ƒLöDu
-¸6”ƒÄ]Ã1ÀÇEğ   PPè¼ª	 UƒìƒÅMÜè'  ƒÄ]ÃU‰åSWVƒì(Eè‰Mà‰`üÇ@ÿÿÿÿÇ@@¤d‹    ‰d£    ÆEÔ ‰MØ‹‹@ƒ| …ò   ‹Uà‹LH…ÉtÇEğ    è!÷ÿÿ‹Uà‹‹@DuÜÆEÔ‰ñPèğ ÇEğ   ‰ñh@—:è“ MÜ‰Ãè&  ‹}à‹‹H‹DLƒøÿuPùuÜ‰]ÌA‰MĞ‰ñPè¬ ÇEğ   ‰ñhğ—:èO ‹‰Áj ÿRMÜ‰Ãè2&  ‹MĞ‹}à¾Ã‹]Ì‰AL‹‹I4‹|‹¾À‹Q ÇEğ   ‰ÙÿuPVWEÜPÿÒƒ}Ü u‹Uà‹‹@‹DƒÈPè8  MÔèzöâÿ‹Eèd£    ‹EàƒÄ(^_[]Â ƒÅéâÿÿÿUƒìƒÅMÜè§%  ƒÄ]ÃUƒìƒÅMÔè9öâÿƒÄ]ÃUƒìƒÅ‰eä‹Mà‹‹@ƒLöDu
-¸–ƒÄ]Ã1ÀÇEğ   PPèê¨	 UƒìƒÅMÜèG%  ƒÄ]ÃU‰åSWVƒì(Eè‰Mà‰`üÇ@ÿÿÿÿÇ@P¤d‹    ‰d£    ÆEÔ ‰MØ‹‹@ƒ| …ò   ‹Uà‹LH…ÉtÇEğ    èOõÿÿ‹Uà‹‹@DuÜÆEÔ‰ñPè ÇEğ   ‰ñh@—:èÁ MÜ‰Ãè­$  ‹}à‹‹H‹DLƒøÿuPùuÜ‰]ÌA‰MĞ‰ñPèÚ ÇEğ   ‰ñhğ—:è} ‹‰Áj ÿRMÜ‰Ãè`$  ‹MĞ‹}à¾Ã‹]Ì‰AL‹‹I4‹|‹¾À‹QÇEğ   ‰ÙÿuPVWEÜPÿÒƒ}Ü u‹Uà‹‹@‹DƒÈPèf	  MÔè¨ôâÿ‹Eèd£    ‹EàƒÄ(^_[]Â ƒÅéâÿÿÿUƒìƒÅMÜèÕ#  ƒÄ]ÃUƒìƒÅMÔègôâÿƒÄ]ÃUƒìƒÅ‰eä‹Mà‹‹@ƒLöDu
-¸Ú—ƒÄ]Ã1ÀÇEğ   PPè§	 UƒìƒÅMÜèu#  ƒÄ]ÃU‰åSWVƒì@Eè‰Mà‰`üÇ@ÿÿÿÿÇ@`¤d‹    ‰d£    ÆEÔ ‰MØ‹‹@ƒ| …+  ‹Uà‹LH…ÉtÇEğ    è}óÿÿ‹Uà‹‹@uÜDÆEÔ‰ñ‰$èJ ƒì‰ñÇEğ   Ç$@—:èè ƒì]Ü‰Ç‰ÙèÏ"  ‹Uà‹‹p‹D2LƒøÿueÖ‰}ÌF‰uĞuÜ‰ñ‰$èú  ƒì‰ñÇEğ   Ç$ğ—:è˜ ƒì‹‰ÁÇ$    ÿRƒìMÜ‰Ãèp"  ‹MĞ‹Uà¾Ã‹}Ì]Ü‰AL‹
-‹q2‹T2‹7óZE¾À‹v‰L$‰ùÇEğ   ‰D$‰T$‰$òD$ÿÖƒìƒ}Ü u‹Uà‹‹@‹DƒÈ‰$è^  ƒìMÔèòâÿ‹Eèd£    ‹EàƒÄ@^_[]Â ƒÅéâÿÿÿUƒìƒÅMÜèÉ!  ƒÄ]ÃUƒìƒÅMÔè[òâÿƒÄ]ÃUƒìƒÅ‰eä‹Mà‹‹@ƒLöDu
-¸å™ƒÄ]Ã1ÀÇEğ   ‰D$‰$è¥	 UƒìƒÅMÜèc!  ƒÄ]ÃU‰åSWVƒì(Eè‰Mà‰`üÇ@ÿÿÿÿÇ@p¤d‹    ‰d£    ÆEÔ ‰MØ‹‹@ƒ| …ò   ‹Uà‹LH…ÉtÇEğ    èkñÿÿ‹Uà‹‹@DuÜÆEÔ‰ñPè:ÿ  ÇEğ   ‰ñh@—:èİ  MÜ‰ÃèÉ   ‹}à‹‹H‹DLƒøÿuPùuÜ‰]ÌA‰MĞ‰ñPèöş  ÇEğ   ‰ñhğ—:è™  ‹‰Áj ÿRMÜ‰Ãè|   ‹MĞ‹}à¾Ã‹]Ì‰AL‹‹I4‹|‹¾À‹QÇEğ   ‰ÙÿuPVWEÜPÿÒƒ}Ü u‹Uà‹‹@‹DƒÈPè‚  MÔèÄğâÿ‹Eèd£    ‹EàƒÄ(^_[]Â ƒÅéâÿÿÿUƒìƒÅMÜèñ  ƒÄ]ÃUƒìƒÅMÔèƒğâÿƒÄ]ÃUƒìƒÅ‰eä‹Mà‹‹@ƒLöDu
-¸¾›ƒÄ]Ã1ÀÇEğ   PPè4£	 UƒìƒÅMÜè‘  ƒÄ]ÃU‰åSWVƒìEè‰Mà‰`üÇ@ÿÿÿÿÇ@€¤d‹    ‰d£    ÆEØ ‰MÜ‹‹@ƒ| uv‹Uà‹LH…ÉtÇEğ    èïÿÿ‹Uà‹‹@ÆEØ‹L…Ét,‹QŠE;Qt
-r‰qˆë6‹¶À‹R0ÇEğ   PÿÒƒøÿu‹Uà‹‹@‹DÇEğ   ƒÈPè0  MØèrïâÿ‹Eèd£    ‹EàƒÄ^_[]Â ƒÅéâÿÿÿUƒìƒÅ‰eä‹Mà‹‹@ƒLöDu
-¸ƒÄ]Ã1ÀÇEğ   PPè
-¢	 UƒìƒÅMØèïâÿƒÄ]ÃU‰åSWVƒìEè‰Mà‰`üÇ@ÿÿÿÿÇ@¤d‹    ‰d£    ÆEØ ‰MÜ‹‹@ƒ| tMØè¾îâÿ‹Eèd£    ‹EàƒÄ^_[]Â ‹Mà‹LH…ÉtÇEğ    èUîÿÿ‹uÆEØ…ötÀ‹Uà‹E‹
-‹I‹L
-‹‹R,ÇEğ   VPÿÒ‹M9Ètš‹Uà‹‹@‹DƒÈPèş  ë€ƒÅé€ÿÿÿUƒìƒÅMØè/îâÿƒÄ]ÃUƒìƒÅ‰eä‹Mà‹‹@ƒLöDu
-¸&ƒÄ]Ã1ÀÇEğ   PPèà 	 U‰åV‹EÆ ‰Î‰A‹‹Iƒ| u‹LH…Étè0ñÿÿÆ‰ğ^]Â U‰åSWVƒìEè‰Î‰`üÇ@ÿÿÿÿÇ@ ¤d‹    ‰d£    ‹F‹‹Iƒ| tTƒ| uMöD tFèºØÿÿ„Àu=‹F‰uà‹‹I‹L‹‹@ÇEğ   ÿĞ‹Màƒøÿu‹A‹‹Q‹DƒÈPèå  ‹Eèd£    ƒÄ^_[]ÃƒÅéçÿÿÿUPƒÅ
+        if (rect.w !== lastRepaintRect.w) {
+          style.width = rect.w - borderW + 'px';
+          lastRepaintRect.w = rect.w;
+        }
+        if (rect.h !== lastRepaintRect.h) {
+          style.height = rect.h - borderH + 'px';
+          lastRepaintRect.h = rect.h;
+        }
+        self._lastRepaintRect = lastRepaintRect;
+        self.fire('repaint', {}, false);
+        return self;
+      },
+      renderHtml: function () {
+        var self = this;
+        var settings = self.settings;
+        var attrs, elm;
+        attrs = {
+          id: self._id,
+          hidefocus: '1'
+        };
+        global$2.each([
+          'rows',
+          'spellcheck',
+          'maxLength',
+          'size',
+          'readonly',
+          'min',
+          'max',
+          'step',
+          'list',
+          'pattern',
+          'placeholder',
+          'required',
+          'multiple'
+        ], function (name) {
+          attrs[name] = settings[name];
+        });
+        if (self.disabled()) {
+          attrs.disabled = 'disabled';
+        }
+        if (settings.subtype) {
+          attrs.type = settings.subtype;
+        }
+        elm = funcs.create(settings.multiline ? 'textarea' : 'input', attrs);
+        elm.value = self.state.get('value');
+        elm.className = self.classes.toString();
+        return elm.outerHTML;
+      },
+      value: function (value) {
+        if (arguments.length) {
+          this.state.set('value', value);
+          return this;
+        }
+        if (this.state.get('rendered')) {
+          this.state.set('value', this.getEl().value);
+        }
+        return this.state.get('value');
+      },
+      postRender: function () {
+        var self = this;
+        self.getEl().value = self.state.get('value');
+        self._super();
+        self.$el.on('change', function (e) {
+          self.state.set('value', e.target.value);
+          self.fire('change', e);
+        });
+      },
+      bindStates: function () {
+        var self = this;
+        self.state.on('change:value', function (e) {
+          if (self.getEl().value !== e.value) {
+            self.getEl().value = e.value;
+          }
+        });
+        self.state.on('change:disabled', function (e) {
+          self.getEl().disabled = e.value;
+        });
+        return self._super();
+      },
+      remove: function () {
+        this.$el.off();
+        this._super();
+      }
+    });
+
+    var getApi = function () {
+      return {
+        Selector: Selector,
+        Collection: Collection$2,
+        ReflowQueue: ReflowQueue,
+        Control: Control$1,
+        Factory: global$4,
+        KeyboardNavigation: KeyboardNavigation,
+        Container: Container,
+        DragHelper: DragHelper,
+        Scrollable: Scrollable,
+        Panel: Panel,
+        Movable: Movable,
+        Resizable: Resizable,
+        FloatPanel: FloatPanel,
+        Window: Window,
+        MessageBox: MessageBox,
+        Tooltip: Tooltip,
+        Widget: Widget,
+        Progress: Progress,
+        Notification: Notification,
+        Layout: Layout,
+        AbsoluteLayout: AbsoluteLayout,
+        Button: Button,
+        ButtonGroup: ButtonGroup,
+        Checkbox: Checkbox,
+        ComboBox: ComboBox,
+        ColorBox: ColorBox,
+        PanelButton: PanelButton,
+        ColorButton: ColorButton,
+        ColorPicker: ColorPicker,
+        Path: Path,
+        ElementPath: ElementPath,
+        FormItem: FormItem,
+        Form: Form,
+        FieldSet: FieldSet,
+        FilePicker: FilePicker,
+        FitLayout: FitLayout,
+        FlexLayout: FlexLayout,
+        FlowLayout: FlowLayout,
+        FormatControls: FormatControls,
+        GridLayout: GridLayout,
+        Iframe: Iframe$1,
+        InfoBox: InfoBox,
+        Label: Label,
+        Toolbar: Toolbar$1,
+        MenuBar: MenuBar,
+        MenuButton: MenuButton,
+        MenuItem: MenuItem,
+        Throbber: Throbber,
+        Menu: Menu,
+        ListBox: ListBox,
+        Radio: Radio,
+        ResizeHandle: ResizeHandle,
+        SelectBox: SelectBox,
+        Slider: Slider,
+        Spacer: Spacer,
+        SplitButton: SplitButton,
+        StackLayout: StackLayout,
+        TabPanel: TabPanel,
+        TextBox: TextBox,
+        DropZone: DropZone,
+        BrowseButton: BrowseButton
+      };
+    };
+    var appendTo = function (target) {
+      if (target.ui) {
+        global$2.each(getApi(), function (ref, key) {
+          target.ui[key] = ref;
+        });
+      } else {
+        target.ui = getApi();
+      }
+    };
+    var registerToFactory = function () {
+      global$2.each(getApi(), function (ref, key) {
+        global$4.add(key, ref);
+      });
+    };
+    var Api = {
+      appendTo: appendTo,
+      registerToFactory: registerToFactory
+    };
+
+    Api.registerToFactory();
+    Api.appendTo(window.tinymce ? window.tinymce : {});
+    global.add('modern', function (editor) {
+      FormatControls.setup(editor);
+      return ThemeApi.get(editor);
+    });
+    function Theme () {
+    }
+
+    return Theme;
+
+}(window));
+})();

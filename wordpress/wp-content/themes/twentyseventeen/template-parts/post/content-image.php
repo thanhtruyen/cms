@@ -1,1 +1,86 @@
-.pub=p.pub(),e.ssl=p.ssl||0,e.du=p.truncateURL(e.url||p.du||p.dl.href),e.xtr=a!==M?0:_atc.xtr,p.dt&&(e.dt=p.dt),p.cb&&(e.cb=p.cb),p.kw&&(e.kw=p.kw),e.lng=ee(),e.ver=300,e.jsl=p.track.jsl(),e.prod=p.track.prod(),!p.upm&&p.uid&&(e.uid=p.uid),e.pc=e.spc||w.join(","),o&&(e.dr=p.truncateURL(o)),p.dh&&(e.dh=p.dh),i&&(e.rev=i),p.xfr){if(p.upm&&E)E.post(ke(e));else if(!bt()){var r=t();v&&r.removeChild(r.firstChild),v=n(),v.src=Ot+"#"+ke(e),r.appendChild(v)}}else g.push(e)}function r(e){if(h.length>0||A){if(p.track.sxm(!1,r),_atc.xtr)return;var t=A||{};if(t.ce=h.join(","),h=[],A=null,i(t),e){var n=d.ce("iframe");n.id="_atf",_ate.opp(n),d.body.appendChild(n),n=d.getElementById("_atf")}}}function s(e,t){h.push(p.track.fcv(e,t)),p.track.sxm(!0,r)}function c(e,t){var n=ee().split("-").shift(),a=p.dl?p.dl.hostname:"",o=window._atc;if(h.length>0){if(o.xtr)return;(a.indexOf(".gov")>-1||a.indexOf(".mil")>-1)&&(o.xck=1),p.dt&&h.push(p.track.fcv("pti",p.dt)),h.push(p.track.fcv("lng",n)),p.cb&&h.push(p.track.fcv("cb",p.cb));var i="//o.addthis.com/at/tev-"+p.track.ran()+".png?ev="+p.track.sta()+"&ce="+u(h.join(","))+(o.xck?"&xck=1":"")+(p.dr?"&dr="+u(p.track.mgu(p.dr,{defrag:1})):"")+(p.du?"&PRE="+u(p.track.mgu(p.du,{defrag:1})):"");h=[],p.track.lpx({url:i,close:e},t)}}function l(e,t){return e?e.pco?(e.ruleId||T.warn("missing ruleId, only OK if no audiences are specified for the tool `"+e.pco+"`."),e.url||(e.url=_ate.du),h.push(p.track.fcv("typ","lnk")),h.push(p.track.fcv("pco",e.pco)),h.push(p.track.fcv("pur",p.track.mgu(e.url,{defrag:!0}))),e.goal&&h.push(p.track.fcv("goal",e.goal)),e.ruleId&&h.push(p.track.fcv("cad",e.ruleId)),e.prov&&h.push(p.track.fcv("prov",e.prov)),e.emailHash&&h.push(p.track.fcv("emhash",e.emailHash)),e.testID&&h.push(p.track.fcv("test",e.testID)),e.position&&h.push(p.track.fcv("position",e.position)),void c(!1,t)):void T.error("missing pco"):void T.error("missing data")}var u=encodeURIComponent,d=document,p=_ate,h=[],A=null,f=function(e){var t=_ate.track.ts.get();"social"==t.type?_ate.cookie.ssc.update(t.service):e&&_ate.cookie.ssc.update(e)},g=[],m=function(){for(var e;e=g.pop();)i(e)},v=null,w=[];p.ed.addEventListener("addthis-internal
+<?php
+/**
+ * Template part for displaying image posts
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since Twenty Seventeen 1.0
+ * @version 1.2
+ */
+
+?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php
+	if ( is_sticky() && is_home() ) {
+		echo twentyseventeen_get_svg( array( 'icon' => 'thumb-tack' ) );
+	}
+	?>
+	<header class="entry-header">
+		<?php
+		if ( 'post' === get_post_type() ) {
+			echo '<div class="entry-meta">';
+			if ( is_single() ) {
+				twentyseventeen_posted_on();
+			} else {
+				echo twentyseventeen_time_link();
+				twentyseventeen_edit_link();
+			};
+				echo '</div><!-- .entry-meta -->';
+		};
+
+		if ( is_single() ) {
+			the_title( '<h1 class="entry-title">', '</h1>' );
+		} elseif ( is_front_page() && is_home() ) {
+			the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+		} else {
+			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		}
+		?>
+	</header><!-- .entry-header -->
+
+	<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
+		<div class="post-thumbnail">
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail( 'twentyseventeen-featured-image' ); ?>
+			</a>
+		</div><!-- .post-thumbnail -->
+	<?php endif; ?>
+
+	<div class="entry-content">
+
+		<?php
+		if ( is_single() || '' === get_the_post_thumbnail() ) {
+
+			// Only show content if is a single post, or if there's no featured image.
+			the_content(
+				sprintf(
+					/* translators: %s: Post title. */
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
+					get_the_title()
+				)
+			);
+
+			wp_link_pages(
+				array(
+					'before'      => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
+					'after'       => '</div>',
+					'link_before' => '<span class="page-number">',
+					'link_after'  => '</span>',
+				)
+			);
+
+		};
+		?>
+
+	</div><!-- .entry-content -->
+
+	<?php
+	if ( is_single() ) {
+		twentyseventeen_entry_footer();
+	}
+	?>
+
+</article><!-- #post-<?php the_ID(); ?> -->
