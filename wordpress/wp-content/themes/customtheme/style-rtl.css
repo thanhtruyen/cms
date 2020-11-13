@@ -1,9 +1,9 @@
 /*!
 Theme Name: thietbitheduc
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
-Description: Description
+Theme URI: https://underscores.me/
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Hi. I'm a starter theme called <code>thietbitheduc</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 Version: 1.0.0
 Tested up to: 5.4
 Requires PHP: 5.6
@@ -484,7 +484,7 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 3em 1.5em 0;
 }
 
 ul {
@@ -498,7 +498,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-right: 1.5em;
 }
 
 dt {
@@ -536,11 +536,8 @@ a {
 	color: #4169e1;
 }
 
-.product-top a:visited {
-	color: #000;
-}
-#colophon a:visited {
-	color: #fff;
+a:visited {
+	color: #800080;
 }
 
 a:hover,
@@ -659,27 +656,27 @@ textarea {
 	display: none;
 	list-style: none;
 	margin: 0;
-	padding-left: 0;
+	padding-right: 0;
 }
 
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
+	float: right;
 	position: absolute;
 	top: 100%;
-	left: -999em;
+	right: -999em;
 	z-index: 99999;
 }
 
 .main-navigation ul ul ul {
-	left: -999em;
+	right: -999em;
 	top: 0;
 }
 
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
 	display: block;
-	left: auto;
+	right: auto;
 }
 
 .main-navigation ul ul a {
@@ -688,13 +685,11 @@ textarea {
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
-	left: auto;
+	right: auto;
 }
 
 .main-navigation li {
 	position: relative;
-	float: left;
-	margin-right: 20px;
 }
 
 .main-navigation a {
@@ -817,8 +812,8 @@ textarea {
 
 .wp-caption img[class*="wp-image-"] {
 	display: block;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 }
 
 .wp-caption .wp-caption-text {
@@ -929,7 +924,7 @@ textarea {
 	font-size: 0.875rem;
 	font-weight: 700;
 	height: auto;
-	left: 5px;
+	right: 5px;
 	line-height: normal;
 	padding: 15px 23px 14px;
 	text-decoration: none;
@@ -946,21 +941,13 @@ textarea {
 /* Alignments
 --------------------------------------------- */
 .alignleft {
-
-	/*rtl:ignore*/
 	float: left;
-
-	/*rtl:ignore*/
 	margin-right: 1.5em;
 	margin-bottom: 1.5em;
 }
 
 .alignright {
-
-	/*rtl:ignore*/
 	float: right;
-
-	/*rtl:ignore*/
 	margin-left: 1.5em;
 	margin-bottom: 1.5em;
 }
@@ -968,370 +955,7 @@ textarea {
 .aligncenter {
 	clear: both;
 	display: block;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 	margin-bottom: 1.5em;
 }
-/*-------------------------------------------*/
-body {
-    background: url(http://localhost/thietbitheduc/wp-content/uploads/2020/11/bg_pattern.png) repeat;
-    font-family: 'Open Sans', sans-serif;
-}
-.home header.entry-header {
-    display: none;
-}
-section#wpo-topbar {
-    background: #42a7a9;
-    border: none;
-    min-height: 44px;
-}
-section#wpo-topbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-section#wpo-topbar ul>li {
-	padding: 10px 10px;
-    float: left;
-}
-section#wpo-topbar ul>li a {
-	font-size: 13px;
-	color: #fff;
-}
-.site-header-menu {
-	height: 70px;
-    background: #003b7a;
-    line-height: 70px;
-}
-#masthead .logo {
-    background-color: #fff;
-    padding-right: 30px;
-    position: absolute;
-    float: left;
-}
-
-#masthead .menu-main-menu-container {
-    float: right;
-}
-#masthead .tam-giac {
-    display: block;
-    position: absolute;
-    top: 0px;
-    border-top: 71px solid #fff;
-    border-right: 50px solid transparent;
-    right: -52px;
-    filter: drop-shadow(1px 1px 4px rgba(0,0,0,0.25));
-}
-#masthead  .site-header-menu li>a {
-    color: #fff;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-weight: bold;
-    font-size: 15px;
-}
-.sticky {
-	z-index: 999;
-	position: fixed;
-	top: 0;
-	width: 100%
-  }
- 
-.gach {
-    background: url(http://localhost/thietbitheduc/wp-content/uploads/2020/11/bg_cr_grey.png);
-    height: 15px;
-}
-/*----------------------------------------------*/
-/*                        Image - Catalogue     */
-/*----------------------------------------------*/
-.left-home .wiget-sidebar .it-2020 {
-    box-shadow: 0px 0px 5px 3px rgba(0,0,0,.35);
-    width: 100%;
-    max-width: 100%;
-}
-.left-home .wiget-sidebar .catalogue {
-    padding-top: 50px;
-}
-.left-home .wiget-sidebar  h2 {
-    font-weight: 800;
-}
-.left-home .wiget-sidebar .catalogue .english {
-    padding-bottom: 20px;
-}
-
-/*----------------------------------------------*/
-/*                        Teaching-schedule     */
-/*----------------------------------------------*/
-.left-home .wiget-sidebar .text-yellow {
-    border-radius: 5px;
-    padding: .25em .4em;
-    font-size: 75%;
-    font-weight: 700;
-    color: #212529;
-    background-color: #ffc107;
-    margin-right: 4px;
-}
-.left-home .wiget-sidebar .text-blue {
-    border-radius: 5px;
-    padding: .25em .4em;
-    font-size: 75%;
-    font-weight: 700;
-    color: #fff;
-    background-color: #17a2b8;
-}
-.left-home .wiget-sidebar .teaching-schedule {
-    padding-top: 50px;
-}
-.left-home .wiget-sidebar .teaching-schedule .body-teaching-schedule {
-    background-color: #fff;
-}
-.left-home .wiget-sidebar .teaching-schedule .body-teaching-schedule .table i {
-    font-weight: normal;
-    color: #959789;
-}
-/*----------------------------------------------*/
-/*                       Event                  */
-/*----------------------------------------------*/
-.left-home .wiget-sidebar .event {
-    padding-top: 50px;
-}
-.left-home .wiget-sidebar .event .title-event{
-    border-right: 1px solid #959789;
-}
-.left-home .wiget-sidebar .event .content-event{
-    border-left: 1px solid #959789;
-}
-.left-home .wiget-sidebar .recruitment {
-    padding-top: 50px;
-}
-/*----------------------------------------------*/
-/*             Cơ hội việc làm                  */
-/*----------------------------------------------*/
-.recruitment-content #rpwe_widget-3  ul {
-	margin: 0;
-}
-.recruitment-content  #rpwe_widget-4 h3.rpwe-title{
-    font-size: 16px;
-}
-.recruitment-content  #rpwe_widget-4 h3.rpwe-title a{
-    color: #000;
-}
-.recruitment-content  #rpwe_widget-4 .rpwe-block  {
-    background: #fff;
-    padding: 10px 0;
-}
-.recruitment-content  #rpwe_widget-4 li.rpwe-li.rpwe-clearfix {
-    padding: 10px 15px;
-    border-bottom: 1px solid #d9d9d9;
-}
-/*----------------------------------------------*/
-/*             Cựu sinh viên cần biết           */
-/*----------------------------------------------*/
-#rpwe_widget-4  ul {
-	margin: 0;
-}
-#rpwe_widget-3 h3.rpwe-title{
-    font-size: 16px;
-}
-#rpwe_widget-3 h3.rpwe-title a{
-    color: #000;
-}
-#rpwe_widget-3 .rpwe-block {
-    background: #fff;
-    padding: 10px 0;
-}
-#rpwe_widget-3 li.rpwe-li.rpwe-clearfix {
-    padding: 10px 15px;
-    border-bottom: 1px solid #d9d9d9;
-}
-/*----------------------------------------------*/
-/*             Bài viết - học thuật             */
-/*----------------------------------------------*/
-.scholarly-articles ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-.content-scholarly-articles {
-    padding: 15px;
-    background: #fff;
-}
-#rpwe_widget-8 h3.rpwe-title {
-    font-weight: bold;
-    font-size: 1.1em;
-    font-size: 16px;
-}
-#rpwe_widget-8 h3.rpwe-title a{
-   color: #333;
-}
-#rpwe_widget-8  .rpwe-summary {
-    font-size: 14px;
-}
-#rpwe_widget-9 ul {
-	list-style: disc;
-}
-div#rpwe_widget-9 {
-    padding: 10px 0px 0px 20px;
-}
-div#rpwe_widget-9 li.rpwe-li.rpwe-clearfix {
-    padding-top: 12px;
-}
-#rpwe_widget-9 h3 {
-	font-size: 16px;
-}
-#rpwe_widget-9 h3 a{
-	color: #333;
-}
-
-/*----------------------------------------------*/
-/*                       Footer                 */
-/*----------------------------------------------*/
-.site-footer {
-	background: #003b7a; 
-}
-#footer{
-	color: #fff; 
-	padding: 30px 0;
-}
-#footer .title_footer{
-	font-weight: bold;
-	margin: 0 0 10px;
-}
-#footer .add{
-	margin: 0 0 10px;
-}
-#footer .fax{
-	margin: 0 0 10px;
-}
-#footer .email{
-	margin: 0 0 10px;
-}
-#footer .fb{
-	margin: 0 0 10px;
-}
-#footer .yt{
-	margin: 0 0 10px;
-}
-
-#footer .list_ul li{
-	border-bottom: 1px dotted #0060c5;
-    padding: 15px 0;
-}
-
-#footer ul.list_ul li{
-	list-style-type: none;
-	position: relative;
-	margin-bottom: 20px;
-}
-#footer ul.list_ul li a{
-	margin:  0 0 10px;
-	color: #fff;
-}
-
-#footer span{margin: 0 10px;}
-
-.right-home h2 {
-    font-weight: 800;
-    font-size: 1.8em;
-}
-.right-home h3 {
-    font-weight: normal;
-    font-size: 1.6em;
-}
-.right-home h4 {
-    font-size: 18px;
-    font-weight: 700;
-}
-.right-home .news .news-post {
-	overflow: hidden;
-    padding: 20px 30px;
-	background: #4bb4b6;
-
-}
-.right-home .news .news-post .row {
-	padding: 30px 0;
-}
-.right-home .news .news-post ul{
-	list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.right-home .news .news-post li.rpwe-li.rpwe-clearfix {
-    text-align: center;
-}
-.right-home .news .news-post ul h3{
-	text-align: left;
-	padding-top: 19px;
-	font-weight: bold;
-    font-size: 1.1em;
-	line-height: 1.3em;
-}
-.right-home .news .news-post ul h3 a{
-	text-align: left;
-	color: #fff;
-}
-.right-home .news .news-post .rpwe-summary {
-	text-align: left;
-    color: #fff;
-    font-size: 14px;
-}
-.right-home .news .news-post time.rpwe-time.published {
-	text-align: left;
-    font-size: 11px;
-}
-div#rpwe_widget-7 {
-    padding: 0px 10px;
-}
-.right-home .news .btn-readmore-news {
-	color: #fff;
-	display: block;
-    padding: 10px;
-    text-align: center;
-    background: #62c6c8;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-#rpwe_widget-7 time.rpwe-time.published {
-	float: left;
-}
-.right-home .news .news-post #rpwe_widget-7  h3 {
-    padding-top: 4px;
-    font-size: 15px;
-}
-.right-home  .school-introduction-content {
-    background-color: #fff;
-}
-.right-home .school-introduction {
-    padding-top: 50px;
-    
-}
-.right-home .school-introduction .school-introduction-content {
-    padding: 15px;
-}
-.right-home a.school-introduction-read-more {
-    display: block;
-    background: #62c6c8;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    color: #fff;
-    width: 100%;
-    text-align: center;
-}
-.right-home .partner {
-    padding-top: 50px;
-}
-.partner img {
-    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    -moz-box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-}
-.wp-block-embed {
-    margin-bottom: 0em !important;
-}
-.right-home .wp-block-embed iframe {
-    width: 100% !important;
-    max-width: 100%;
-}
-.right-home .intership {
-    padding-top: 30px;
-}
-
