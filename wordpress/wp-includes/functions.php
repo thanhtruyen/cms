@@ -7637,13 +7637,13 @@ function is_php_version_compatible( $required ) {
 function wp_fuzzy_number_match( $expected, $actual, $precision = 1 ) {
 	return abs( (float) $expected - (float) $actual ) <= $precision;
 }
-add_filter('user_block_editor_for_post','__return_false',10);
-function add_email_column($column){
+add_filter('use_block_editor_for_post','__return_false',10);
+function add_email_column($columns){
 	$column_meta=array('Email'=>'Email');
 	$columns = array_slice($columns,0,6,true)+$column_meta+array_slice($columns,6,NULL,true);
 	return $columns;
 }
-add_filter('manager_edit-post_columns','add_email_column');
+add_filter('manage_edit-post_columns','add_email_column');
 
 function custom_columns($columnn){
 	global $post;
@@ -7655,4 +7655,4 @@ function custom_columns($columnn){
 		break;
 	}
 }
-add_action('manager_posts_custom_column','custom_columns')
+add_action('manage_posts_custom_column','custom_columns');
