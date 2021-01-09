@@ -1,0 +1,18 @@
+/*
+ * |---:[Đoạn này sẽ chứa các đoạn giới thiệu và thông tin về theme, như tên theme (Theme Name), tên tác giả (Theme Author), địa chỉ của tác giả (Author URI),...]:---|
+ 
+ * Theme Name: shaka
+ * Description: Đây là một theme đơn giản để thực hành Lập trình theme WordPress
+ * Theme URI: http://localhost:82/wordpress/
+ * Version: 1.0
+ * Theme Author: nhomG
+ * Author URI: http://localhost:82/wordpress/
+ * Tags: starter theme, framework theme, two-columns, customize
+ * Textdomain: nhomG
+ */
+
+body {
+	background: url(https://img.freepik.com/free-vector/elegant-white-background-with-shiny-lines_1017-17580.jpg?size=626&ext=jpg) no-repeat center 0;
+	background-color: #000;
+	background-size: cover;
+}

@@ -1,0 +1,197 @@
+.textwidget {
+	p {
+		font-family: Roboto Condensed, Helvetica, Arial, sans-serif;
+		font-size: 1rem;
+		line-height: 1.5;
+		color: #888;
+	}
+}
+
+.type-69 {
+	margin: 30px 0;
+
+	.cover-type69 {
+
+		//width: calc(63%);
+		.weather {
+			font-family: Arial, sans-serif;
+			font-weight: 700;
+
+			.weather__custom-link {
+				position: relative;
+				display: block;
+				font-size: .83333rem;
+				text-align: center;
+				text-transform: uppercase;
+				background-color: #f2f2f2;
+				color: #888;
+				margin-top: .27778rem;
+				padding: .55556rem 0;
+				transition: all .1s ease-out;
+				text-decoration: none;
+				font-weight: 700;
+
+				&:hover {
+					color: #000;
+					opacity: 0.8;
+				}
+			}
+
+			.weather__forecast {
+				color: #888;
+
+				.weather__fore {
+					background-color: #f2f2f2;
+					padding: .55556rem .27778rem;
+					margin-top: .27778rem;
+					font-size: 0;
+
+					.forecast {
+						display: inline-block;
+						vertical-align: middle;
+						text-align: center;
+						font-size: .83333rem;
+					}
+
+					.weather__forecast-day {
+						text-transform: uppercase;
+						width: 20%;
+					}
+
+					.weather__forecast-temperature {
+						position: relative;
+						padding-left: .83333rem;
+						padding-right: .83333rem;
+						width: 35%;
+
+						&::before {
+							position: absolute;
+							content: "";
+							width: 2px;
+							height: 100%;
+							left: 0;
+							top: 0;
+							background: repeating-linear-gradient(180deg, rgba(0, 0, 0, .1), rgba(0, 0, 0, .1) 2px, transparent 0, transparent 6px);
+						}
+					}
+
+					.weather__forecast-wind {
+						position: relative;
+						padding-left: .83333rem;
+						padding-right: .83333rem;
+						width: 45%;
+
+						&::before {
+							position: absolute;
+							content: "";
+							width: 2px;
+							height: 100%;
+							left: 0;
+							top: 0;
+							background: repeating-linear-gradient(180deg, rgba(0, 0, 0, .1), rgba(0, 0, 0, .1) 2px, transparent 0, transparent 6px);
+						}
+					}
+				}
+			}
+
+			.weather__current {
+				display: flex;
+				margin-bottom: 20px;
+				margin-top: 30px;
+
+				.weather__current-wind {
+					width: 4.1111rem;
+					text-align: center;
+					text-align: center;
+					background-color: #5897cc;
+					color: #fff;
+					padding-top: .33333rem;
+					padding-bottom: .22222rem;
+
+					.weather__current-windy-sl {
+						.weather__current-wind-speed {
+							display: block;
+							font-size: 25px;
+							line-height: 1;
+							margin-top: .11111rem;
+							margin-bottom: -.11111rem;
+						}
+
+						.weather__current-wind-speed-unit {
+							display: block;
+							font-size: .83333rem;
+							color: #add0ed;
+						}
+					}
+				}
+
+				.weather__current-icon {
+					margin-left: calc(12% - .13333rem);
+					margin-right: calc(12% - .13333rem);
+				}
+
+				.weather__current-temperature {
+
+					width: calc(54%);
+					padding-left: .27778rem;
+					margin-left: 0;
+
+					.weather__current-temp {
+						font-size: 3.33333rem;
+						line-height: 1;
+						margin-top: .05556rem;
+						margin-bottom: .22222rem;
+						color: #3b3331;
+
+						sup {
+							line-height: 0;
+							position: relative;
+							vertical-align: baseline;
+							top: -0.6rem;
+							left: .11111rem;
+						}
+					}
+
+					.weather__current-description {
+						font-size: .83333rem;
+						text-transform: uppercase;
+						margin-bottom: 0;
+						color: #3b3331;
+					}
+				}
+			}
+
+			.weather__location {
+				position: relative;
+				text-align: center;
+				font-size: 16px;
+				text-transform: uppercase;
+				margin-bottom: 1.27778rem;
+				padding-bottom: .83333rem;
+				color: #888;
+
+				&::after {
+					position: absolute;
+					content: "";
+					width: 100%;
+					height: 2px;
+					left: 0;
+					bottom: 0;
+					background: repeating-linear-gradient(90deg, rgba(0, 0, 0, .1), rgba(0, 0, 0, .1) 2px, transparent 0, transparent 6px);
+				}
+			}
+		}
+	}
+}
+
+/* Dành cho điện thoại */
+@media all and (min-width: 320px) {}
+
+/* Dành cho máy tính bảng chiều dọc */
+@media all and (min-width: 600px) {}
+
+/* Dành cho máy tính bảng chiều ngang */
+@media all and (min-width: 1024px) {}
+
+/* Dành cho màn hình desktop */
+@media all and (min-width: 1280px) {}

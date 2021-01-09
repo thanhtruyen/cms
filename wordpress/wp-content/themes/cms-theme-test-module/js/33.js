@@ -1,0 +1,10 @@
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+ctx.moveTo(0,00);
+ctx.lineTo(190,10);
+ctx.lineTo(190,100);
+ctx.lineTo(30,100);
+ctx.lineTo(0,0);
+ctx.fillStyle = "#d80019";
+ctx.fill();
+ctx.stroke();

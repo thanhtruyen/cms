@@ -1,0 +1,442 @@
+.type-02 {
+    @color-gray: #3b3331;
+	@color-white: #fff;
+    .slider{
+    	position: relative;
+    	display: block;
+    	.button{
+    		position: absolute;
+    		top: 35%;
+    		right: 0;
+    		.button_right{
+    			margin-bottom: 10px;
+    		}
+    		.size_button{
+    			padding: 30px 20px;
+    			background-color: hsla(0,0%,100%,.35);
+    			color: rgba(0,0,0,.35);
+    			width: 150px;
+    			cursor: pointer;
+    			&:hover{
+    				background-color: hsla(0,0%,100%,.5);
+    				transition: .25s;
+    			}
+    			.fa{
+    				font-size: 2rem;
+    			}
+    		}
+    	}
+    	.title{
+    		position: absolute;
+    		top: 25%;
+    		width: 43%;
+    		.title_content{
+    			font-size: 3rem;
+    			color: #fff;
+    			line-height: 1.2;
+    			font-weight: 700;
+    		}
+    		.title_sub_content{
+    			font-weight: 700;
+    			margin-top: 20px;
+    			font-size: 1.1rem;
+    			color: #f7f7f7;
+    			margin-bottom: 20px;
+    		}
+    		.b4t{
+    			margin-top: 25px;
+    			display: inline-block;
+    			.b4t_b5t{
+					text-transform: uppercase;
+					font-size: .93333rem;
+					transition: all .1s ease-out;
+					border-width: 3px;
+					font-weight: 700;
+					text-align: center;
+					white-space: nowrap;
+					vertical-align: middle;
+					user-select: none;
+					border: 1px solid transparent;
+					padding: 1.2889rem 1.48889rem;
+					line-height: 1.5;
+					text-decoration: none;
+    			}
+    			.btn-primary{
+					border-color: #d80019;
+					background-color: #d80019;
+					color: #f7f7f7;
+    			}
+    			.btn-light{
+    				border-color: #FFF;
+					background-color: #FFF;
+					color: #000;
+    			}
+    		}
+    	}
+    	.header{
+    		position: relative;
+    		.right-widget-info{
+	    		position: absolute;
+	    		text-align: right;
+	    		right: 0;
+	    		
+	    		.widget-info{
+	    			display: inline-block;
+	    			background-color: @color-gray;
+	    			height: 60px;
+	    			text-align: left;
+	    			.cover-info_lang{
+	    				text-align: center;
+	    				display: block;
+	    				padding: 22px 30px 16px 20px;
+	    				.fa-chevron-down{
+	    					font-size: 10px;
+	    				}
+	    				.lang_sel_sel{
+	    					color: #fff;
+	    					font-size: 16px;
+	    					font-weight: 700;
+	    					text-transform: uppercase;
+	    				}
+	    			}
+	    			.cover-info{
+	    				text-align: center;
+	    				display: block;
+	    				padding: 20px 30px 16px 20px;
+	    				
+	    				.icon-box{
+	    					display: inline-block;
+	    					vertical-align: top;
+	    					color: #f7f7f7;
+	    					text-transform: uppercase;
+	    					font-size: 15px;
+	    					font-weight: 800;
+	    				}
+	    				.fa{
+	    					display: inline-block;
+	    					text-align: center;
+	    					font-size: 1.5rem;
+	    					margin-left: .1777rem;
+	    					color: hsla(0,0%,100%,.5);
+	    				}
+	    				.fa-headphones{
+	    					&::before{
+	    						content:"\f025";
+	    					}
+	    				}
+	    				.fa-envelope{
+	    					&::before{
+	    						content:"\f0e0";
+	    					}
+	    				}
+	    			}	
+	   	    	}
+	    	}
+	    	.left-widget-icons{
+	    		position: absolute;
+	    		.social-icons{
+	    			.icon-link{
+	    				display: inline-block;
+	    				background-color: @color-gray;
+	    				width: 50px;
+	    				height: 60px;
+	    				&:hover .fa{
+	    					color: @color-white;
+	    					transition: 0.35s;
+	    				}
+	    				.fa{
+	    					text-align: center;
+	    					padding: 12px;
+	    					font-size: 1.5rem;
+	    					margin-left: .1777rem;
+	    					margin-top: .39rem;
+	    					color: hsla(0,0%,100%,.5);
+	    				}
+	    				.fa-twitter{
+	    					&::before{
+	    						content:"\f099";
+	    					}
+	    				}
+	    				.fa-facebook{
+	    					margin-left: .2977rem;
+	    					&::before{
+	    						content:"\f09a";
+	    					}
+	    				}
+	    				.fa-youtube{
+	    					&::before{
+	    						content:"\f167";
+	    					}
+	    				}
+	    			}
+	    		}
+	    	}
+    	}
+    	.cover-slider{
+    		.slider-item{
+    			img{
+    				width: 100%;
+    			}
+    		}
+    	}
+    }
+}
+
+.type-02-other {
+	margin-bottom: .5rem;
+    font-family: Dosis,Helvetica,Arial,sans-serif;
+    font-weight: 800;
+    line-height: 1.2;
+	.slider {
+		.cover-slider{
+    		.slider-item{
+				text-align: center;
+    			img{
+					width: 70%;
+					
+    			}
+    		}
+		}
+	}
+}
+
+/* Dành cho điện thoại */
+@media all and (min-width: 320px) {}
+
+/* Dành cho máy tính bảng chiều dọc */
+@media all and (min-width: 600px) {
+	.type-02{
+		.slider{
+			.button{
+	    		top: 50%;
+	    		.button_right{
+	    			margin-bottom: 10px;
+	    		}
+	    		.size_button{
+	    			padding: 20px 10px;
+	    			width: 100px;
+	    			.fa{
+	    				font-size: 1.5rem;
+	    			}
+	    		}
+	    	}
+			.title{
+				top: 40%;
+				width: 45%;
+				.title_content{
+	    			font-size: 1.5rem;
+	    		}
+	    		.title_sub_content{
+	    			font-size: .8rem;
+	    		}
+	    		.b4t{
+	    			.b4t_b5t{
+						font-size: .63333rem;
+						padding: 1.0889rem 1.18889rem;
+	    			}
+	    		}
+			}
+			.header{
+	    		.right-widget-info{
+		    		position: inherit;
+		    		text-align: left;
+		    		margin-top: 5px;
+		    		margin-bottom: 5px;
+		    	}
+		    	.left-widget-icons{
+		    		position: inherit;
+		    		display: inline-block;
+		    	}
+	    	}
+		}
+	}
+}
+
+@media all and (min-width: 991px) {
+	.type-02{
+		.slider{
+			.button{
+	    		top: 35%;
+	    		.button_right{
+	    			margin-bottom: 10px;
+	    		}
+	    		.size_button{
+	    			padding: 30px 20px;
+	    			width: 150px;
+	    			.fa{
+	    				font-size: 2rem;
+	    			}
+	    		}
+	    	}
+			.title{
+				top: 30%;
+				width: 35%;
+				.title_content{
+	    			font-size: 1.8rem;
+	    		}
+	    		.title_sub_content{
+	    			font-size: .9rem;
+	    		}
+	    		.b4t{
+	    			.b4t_b5t{
+						font-size: .73333rem;
+						padding: 1.0889rem 1.28889rem;
+	    			}
+	    		}
+			}
+			.header{
+	    		.right-widget-info{
+		    		
+		    		margin-top: 5px;
+		    		margin-bottom: 5px;
+		    	}
+		    	.left-widget-icons{
+		    		
+		    	}
+	    	}
+		}
+	}
+}
+
+/* Dành cho máy tính bảng chiều ngang */
+@media all and (min-width: 1024px) {
+	.type-02{
+		.slider{
+			.button{
+	    		top: 35%;
+	    		.button_right{
+	    			margin-bottom: 10px;
+	    		}
+	    		.size_button{
+	    			padding: 30px 20px;
+	    			width: 150px;
+	    			.fa{
+	    				font-size: 2rem;
+	    			}
+	    		}
+	    	}
+			.title{
+				top: 25%;
+				width: 43%;
+				.title_content{
+	    			font-size: 1.8rem;
+	    		}
+	    		.title_sub_content{
+	    			font-size: .9rem;
+	    		}
+	    		.b4t{
+	    			.b4t_b5t{
+						font-size: .73333rem;
+						padding: 1.0889rem 1.28889rem;
+	    			}
+	    		}
+			}
+			.header{
+	    		.right-widget-info{
+		    		position: absolute;
+		    		text-align: left;
+		    		margin-top: 0;
+		    		margin-bottom: 0;
+		    	}
+		    	.left-widget-icons{
+		    		position: absolute;
+		    	}
+	    	}
+		}
+	}
+}
+
+@media all and (min-width: 1230px) {
+	.type-02{
+		.slider{
+			.button{
+	    		top: 35%;
+	    		.button_right{
+	    			margin-bottom: 10px;
+	    		}
+	    		.size_button{
+	    			padding: 30px 20px;
+	    			width: 150px;
+	    			.fa{
+	    				font-size: 2rem;
+	    			}
+	    		}
+	    	}
+			.title{
+				top: 25%;
+				width: 43%;
+				.title_content{
+	    			font-size: 1.8rem;
+	    		}
+	    		.title_sub_content{
+	    			font-size: 1.0rem;
+	    		}
+	    		.b4t{
+	    			.b4t_b5t{
+						font-size: .83333rem;
+						padding: 1.1889rem 1.38889rem;
+	    			}
+	    		}
+			}
+			.header{
+	    		.right-widget-info{
+		    		position: absolute;
+		    		text-align: left;
+		    		margin-top: 0;
+		    		margin-bottom: 0;
+		    	}
+		    	.left-widget-icons{
+		    		position: absolute;
+		    	}
+	    	}
+		}
+	}
+}
+
+/* Dành cho màn hình desktop */
+@media all and (min-width: 1280px) {
+	.type-02{
+		.slider{
+			.button{
+	    		top: 30%;
+	    		.button_right{
+	    			margin-bottom: 10px;
+	    		}
+	    		.size_button{
+	    			padding: 30px 20px;
+	    			width: 150px;
+	    			.fa{
+	    				font-size: 2rem;
+	    			}
+	    		}
+	    	}
+			.title{
+				top: 25%;
+				width: 43%;
+				.title_content{
+	    			font-size: 3rem;
+	    		}
+	    		.title_sub_content{
+	    			font-size: 1.1rem;
+	    		}
+	    		.b4t{
+	    			.b4t_b5t{
+						font-size: .93333rem;
+						padding: 1.2889rem 1.48889rem;
+	    			}
+	    		}
+			}
+			.header{
+	    		.right-widget-info{
+		    		position: absolute;
+		    		text-align: left;
+		    		margin-top: 0;
+		    		margin-bottom: 0;
+		    	}
+		    	.left-widget-icons{
+		    		position: absolute;
+		    	}
+	    	}
+		}
+	}
+}

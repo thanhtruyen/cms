@@ -1,0 +1,106 @@
+html {
+    font-size: 20px;
+}
+.type-50 {
+    @color-black =#3b3331;
+
+    @media (min-width: 992px) {
+        .stats-panel {
+            .stats-numbers {
+                .number-counters {
+                    .number-counter {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+    }
+
+
+    font-family: RobotoCondensed-Regular,
+    Helvetica,
+    Arial,
+    sans-serif;
+    line-height: 1.5;
+    color: #888;
+    background-color: #fff;
+
+    .time-title {
+        margin-bottom: 30px;
+
+        h4 {
+            margin-bottom: .5rem;
+            font-family: Dosis, Helvetica, Arial, sans-serif;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #3b3331;
+        }
+    }
+
+    .shaka-table {
+        width: 100%;
+        max-width: 100%;
+        color: #888;
+        font-size: .83333rem;
+        border: 0;
+        border-collapse: separate;
+        border-spacing: 0;
+        border-width: 1px 0 0 1px;
+        margin: 0 0 1.66667rem;
+        table-layout: fixed;
+        width: 100%;
+        background-color: transparent;
+
+        thead {
+            th {
+                background-color: #d80019;
+                padding: .83333rem 1.11111rem;
+                border-radius: .11111rem;
+                color: #fff;
+                border-right: 2px solid transparent;
+                border-top: 1px solid transparent;
+                border-bottom: 1px solid transparent;
+                background-clip: padding-box;
+                font-family: Dosis, Helvetica, Arial, sans-serif;
+                font-weight: 800;
+                font-size: 1rem;
+                text-transform: uppercase;
+                border-width: 0 1px 1px 0;
+
+                &:first-of-type {
+                    background-color: transparent;
+                    box-shadow: inset 0 0 0 1px #e8e8e8;
+                    color: #3b3331;
+                }
+
+                &:last-of-type {
+                    border-right: 0;
+                }
+            }
+        }
+
+        tbody {
+            td {
+                background-color: #fff;
+                box-shadow: inset 0 0 0 1px #e8e8e8;
+                padding: .83333rem 1.11111rem;
+                border-right: 2px solid transparent;
+                border-bottom: 1px solid transparent;
+                border-top: 1px solid transparent;
+                background-clip: padding-box;
+                border-radius: .11111rem;
+                border-width: 0 1px 1px 0;
+                
+                &:first-of-type {
+                    box-shadow: none;
+                    background-color: #f7f7f7;
+                    font-family: Dosis, Helvetica, Arial, sans-serif;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                    font-size: .83333rem;
+                }
+            }
+        }
+    }
+}

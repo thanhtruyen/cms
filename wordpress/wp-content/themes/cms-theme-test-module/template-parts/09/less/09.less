@@ -1,0 +1,75 @@
+.type-09 {
+    @color_background =#FDFDFD;
+    @font_size_button =80%;
+    background: @color_background;
+
+    .title-shop-a-surf {
+        margin-top: 30px;
+
+        .is-btn-title {
+            font-size: 1.66667rem;
+            font-family: Dosis-Bold;
+        }
+    }
+
+    .card-deck {
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+        .products {
+            li {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, .05), 0 2px 6px rgba(0, 0, 0, .15);
+            }
+
+            .add_to_cart_button {
+                display: none;
+            }
+
+            img {
+                display: block;
+                max-width: 300px;
+                max-height: 300px;
+                width: auto;
+                height: auto;
+            }
+
+            .woocommerce-loop-product__title {
+                font-family: Dosis,Helvetica,Arial,sans-serif;
+                text-transform: uppercase;
+                font-size: 15px;
+                margin-bottom: 0.11111rem;
+                margin-top: 0;
+                margin-left: 5% !important;
+                display: block;
+                color: #3b3331;
+                padding: 0 !important;
+
+            }
+
+            .woocommerce-Price-amount {
+                position: absolute;
+                display: inline-block;
+                top: 72%;
+                left: 5%;
+                font-family: Dosis,Helvetica,Arial,sans-serif;
+                font-size: 14px;
+                font-weight: 800;
+                text-transform: uppercase;
+                background-color: #d80019;
+                color: #fff;
+                padding: 0 .27778rem;
+            }
+
+            .featured-product__categories {
+                font-family: Roboto Condensed,Helvetica,Arial,sans-serif;
+                margin-left: 5% !important;
+                padding: 0;
+                font-size: 14px;
+                color: #888888;
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+        }
+    }
+
+}

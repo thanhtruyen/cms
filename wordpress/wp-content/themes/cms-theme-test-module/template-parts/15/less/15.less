@@ -1,0 +1,115 @@
+.type-15 {
+  font-family: Roboto Condensed, Helvetica, Arial, sans-serif;
+  color: #a5a2a1;
+  font-size: .78889rem;
+  line-height: 2;
+  background-color: #3b3331;
+  .type-15__container{
+    padding: 20px;
+  &:after {
+    content: "";
+    //position: absolute;
+   
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 170px;
+    z-index: 4;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+
+  }
+
+  .footer-top {
+    position: relative;
+    z-index: 6;
+    width: calc(100% - 3.33333rem);
+    margin: 1.66667rem 1.66667rem 0;
+    padding: 3.11111rem 0 3.05556rem;
+    background: #3b3331;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, .35);
+    .text{
+      padding-top: 20px;
+    }
+
+    .widget-footer {
+      .footer-top_heading {
+        color: #ffffff;
+        font-size: 1.11111rem;
+        font-weight: 600;
+        margin-bottom: 1.22222rem;
+      }
+
+      .widget-text {
+        p{
+         margin-bottom: 10px;
+        }
+        i {
+          display: inline-block;
+          margin-right: .16667rem;
+          width: 2.2rem;
+          vertical-align: middle;
+        }
+      }
+
+      ul {
+        padding-left: 0;
+        list-style: none;
+
+        a {
+
+          color: #888888;
+
+        }
+      }
+
+      .widget-contact {
+        i {
+          display: inline-block;
+          width: 2.2rem;
+          margin-right: .16667rem;
+          vertical-align: middle;
+        }
+      }
+
+    }
+  }
+}
+
+  .footer-bottom {
+    position: relative;
+    z-index: 6;
+    text-align: center;
+    padding: 1.55556rem 0;
+
+    .footer-bottom__left {
+
+      a {
+        font-weight: 700;
+        color: #a5a2a1;
+      }
+    }
+
+    .footer-bottom__center {
+      a {
+        color: #a5a2a1;
+        text-decoration: none;
+
+        &:after {
+          content: '\205E';
+          font-size: 1.11111rem;
+
+          background: #3b3331;
+          width: 40px;
+          height: 40px;
+          cursor: default;
+          margin-right: 10px;
+          margin-left: 10px;
+          border-radius: 100px;
+
+        }
+      }
+
+    }
+  }
+}

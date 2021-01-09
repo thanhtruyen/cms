@@ -1,0 +1,216 @@
+.type-6 {
+	//background: url("../images/shaka-background.png");
+	margin: 30px 0;
+    
+	.cover-type6{
+		display: flex;
+		.panel-grid-cell{
+			margin: 5px 0;
+			.cover_content{
+				.mr-top{
+					margin-top: 20px;
+				}
+				.fvp-dynamic{
+					position: relative;
+					width: 100%;
+					.icon_play{
+						position: absolute;
+						z-index: 999;
+						color: #fff;
+						font-size: 115px;
+						left: 35%;
+					}
+				}
+				.page-box__content {
+					display: inline-block;
+					vertical-align: top;
+					.page-box__title {
+						font-size: 1.31111rem;
+						text-transform: uppercase;
+						margin-bottom: .61111rem;
+						a{
+							color: #3b3331;
+							font-weight: 700;
+						}
+					}
+					.page-box__text {
+						font-size: .93333rem;
+						margin-bottom: 0;
+						    color: #888888;
+					}
+				}
+				.page-box__picture {
+					overflow: hidden;
+					display: inline-block;
+					width: 100%;
+					margin-bottom: 1.44444rem;
+					.wp-post-image{
+						max-width: 100%;
+						height: auto;
+					}
+				}
+				.page-box__more-link {
+					display: inline-block;
+					font-family: Helvetica,Arial,sans-serif;
+					font-size: .83333rem;
+					font-weight: 800;
+					text-transform: uppercase;
+					margin-top: .88889rem;
+				}
+			}
+		}
+		.cover-type4{
+			background: #fff;
+			padding: 25px;
+			box-shadow: 0 4px 12px rgba(0,0,0,.05), 0 2px 6px rgba(0,0,0,.15);
+			.weather{
+				font-family: Arial,sans-serif;
+				font-weight: 700;
+				.weather__custom-link {
+					position: relative;
+					display: block;
+					font-size: .83333rem;
+					text-align: center;
+					text-transform: uppercase;
+					background-color: #f2f2f2;
+					color: #888;
+					margin-top: .27778rem;
+					padding: .55556rem 0;
+					transition: all .1s ease-out;
+					text-decoration: none;
+					font-weight: 700;
+					&:hover{
+						color: #000;
+						opacity: 0.8;
+					}
+				}
+				.weather__forecast{
+					color: #888;
+					.weather__fore{
+						background-color: #f2f2f2;
+						padding: .55556rem .27778rem;
+						margin-top: .27778rem;
+						font-size: 0;
+						.forecast{
+							display: inline-block;
+							vertical-align: middle;
+							text-align: center;
+							font-size: .83333rem;
+						}
+						.weather__forecast-day{
+							text-transform: uppercase;
+							width: 20%;
+						}
+						.weather__forecast-temperature{
+							position: relative;
+							padding-left: .83333rem;
+							padding-right: .83333rem;
+							width: 35%;
+							&::before{
+								position: absolute;
+								content: "";
+								width: 2px;
+								height: 100%;
+								left: 0;
+								top: 0;
+								background: repeating-linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.1) 2px,transparent 0,transparent 6px);
+							}
+						}
+						.weather__forecast-wind{
+							position: relative;
+							padding-left: .83333rem;
+							padding-right: .83333rem;
+							width: 45%;
+							&::before{
+								position: absolute;
+								content: "";
+								width: 2px;
+								height: 100%;
+								left: 0;
+								top: 0;
+								background: repeating-linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.1) 2px,transparent 0,transparent 6px);
+							}
+						}
+					}
+				}
+				.weather__current{
+					display: flex;
+					margin-bottom: 20px;
+					margin-top: 30px;
+					.weather__current-wind{
+						width: 4.1111rem;
+						text-align: center;
+						text-align: center;
+						background-color: #5897cc;
+						color: #fff;
+						padding-top: .33333rem;
+						padding-bottom: .22222rem;
+						.weather__current-windy-sl{
+							.weather__current-wind-speed{
+								display: block;
+								font-size: 25px;
+								line-height: 1;
+								margin-top: .11111rem;
+								margin-bottom: -.11111rem;
+							}
+							.weather__current-wind-speed-unit{
+								display: block;
+								font-size: .83333rem;
+								color: #add0ed;
+							}
+						}
+					}
+					.weather__current-icon{
+
+					}
+					.weather__current-temperature{
+						width: calc(54%);
+						padding-left: .57778rem;
+						margin-left: 0;
+						.weather__current-temp{
+							font-size: 3.33333rem;
+							line-height: 1;
+							margin-top: .05556rem;
+							margin-bottom: .22222rem;
+							color: #3b3331;
+							sup{
+								line-height: 0;
+								position: relative;
+								vertical-align: baseline;
+								top: -0.6rem;
+								left: .11111rem;
+							}
+						}
+						.weather__current-description{
+							font-size: .83333rem;
+							text-transform: uppercase;
+							margin-bottom: 0;
+							color: #3b3331;
+						}
+					}
+				}
+				.weather__location{
+					position: relative;
+					text-align: center;
+					font-size: 16px;
+					text-transform: uppercase;
+					margin-bottom: 1.27778rem;
+					padding-bottom: .83333rem;
+					color: #888;
+					&::after{
+						position: absolute;
+						content: "";
+						width: 100%;
+						height: 2px;
+						left: 0;
+						bottom: 0;
+						background: repeating-linear-gradient(90deg,rgba(0,0,0,.1),rgba(0,0,0,.1) 2px,transparent 0,transparent 6px);
+					}		    
+				}
+			}
+		}
+	}
+}
+.type-6-for-services {
+	margin-top: -5px;
+}

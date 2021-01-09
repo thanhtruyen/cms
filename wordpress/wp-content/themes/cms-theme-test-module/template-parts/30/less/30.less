@@ -1,0 +1,96 @@
+.type-30 {
+  font-family: Roboto Condensed, Helvetica, Arial, sans-serif;
+
+  .contact-profile {
+    img {
+      width: 100%;
+    }
+
+    .text-holder {
+      position: absolute;
+      display: inline-block;
+      top: -.91111rem;
+      font-size: 0.93333rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      background-color: #d80019;
+      color: #fff;
+      padding: 5px;
+      left: 1.38889rem;
+    }
+
+    .contact-profile__container {
+      position: relative;
+      padding: 2.22222rem 2.22222rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .05), 0 2px 6px rgba(0, 0, 0, .15);
+
+      .card-title {
+
+        margin-bottom: .66667rem;
+        color: #3b3331;
+        font-size: 1.33334rem;
+        font-family: Dosis-Bold, Helvetica, Arial, sans-serif;
+      }
+
+      .contact-profile__skills {
+        position: relative;
+        color: #bbb;
+        padding-top: 1.11111rem;
+
+        &::before {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 2px;
+          left: 0;
+          top: 0;
+          background: repeating-linear-gradient(90deg, rgba(0, 0, 0, .1), rgba(0, 0, 0, .1) 2px, transparent 0, transparent 6px);
+        }
+
+        .contact-profile__skill {
+          padding-bottom: .27778rem;
+          color: #888;
+
+          .contact-profile__icon {
+            float: left;
+            width: 1.66667rem;
+            margin-top: -.11111rem;
+          }
+
+          .contact-profile__text {
+            margin-left: 1.66667rem;
+            margin-bottom: 0;
+            font-size: .88889rem;
+          }
+
+        }
+      }
+
+      .contact-profile__social-icons {
+        position: relative;
+        margin-top: 1.11111rem;
+        padding-top: .61111rem;
+
+        &::before {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 2px;
+          left: 0;
+          top: 0;
+          background: repeating-linear-gradient(90deg, rgba(0, 0, 0, .1), rgba(0, 0, 0, .1) 2px, transparent 0, transparent 6px);
+        }
+
+        .contact-profile__social-icon {
+          color: #d80019;
+          padding-right: 0.388889rem;
+          font-size: 1.53333rem;
+
+          &:first-of-type {
+            margin-left: .38889rem;
+          }
+        }
+      }
+    }
+  }
+}

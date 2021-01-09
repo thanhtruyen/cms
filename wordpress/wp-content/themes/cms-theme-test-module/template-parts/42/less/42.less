@@ -1,0 +1,171 @@
+.type-42 {
+    @color_text_grey =#888;
+    @color_black_bold =#3b3331;
+    .row-for-items {
+        display:  inherit;
+    }
+    @media (min-width: 992px) {
+        // .custom-card {
+        //     width: 25%;
+        // }
+
+        .filter-header {
+            display: inline-block;
+            border-top: 0;
+
+            .btn {
+                display: inline-block;
+                padding: 1.11111rem 1.11111rem 1rem;
+            }
+        }
+    }
+
+    .filter-header {
+        margin-bottom: 10px;
+
+        &:after {
+            position: absolute;
+            content: "";
+            right: -2px;
+            top: calc(50% - .55556rem);
+            background: repeating-linear-gradient(180deg, rgba(0, 0, 0, .1), rgba(0, 0, 0, .1) 2px, transparent 0, transparent 6px);
+            width: 2px;
+            height: 1.11111rem;
+        }
+
+        .btn {
+            background: none !important;
+            border: none;
+            /*optional*/
+            font-family: Dosis-Bold, Helvetica, Arial, sans-serif;
+            font-size: .83333rem;
+            font-weight: 800;
+            color: @color_text_grey;
+            text-transform: uppercase;
+            /*input has OS specific font-family*/
+            text-decoration: none;
+
+            &:hover {
+                color: @color_black_bold;
+            }
+        }
+
+        .active {
+            position: relative;
+            left: 0;
+            right: 0;
+            color: @color_black_bold  !important;
+
+            &:focus {
+                box-shadow: none !important;
+            }
+        }
+    }
+
+    .show {
+        display: inline-block !important;
+        margin-right: 50px;
+    }
+
+    .product{
+        box-shadow: 0 4px 12px rgba(0, 0, 0, .05), 0 2px 6px rgba(0, 0, 0, .15);
+        overflow: hidden;
+        display: none;
+        font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+        
+        img {
+            display: block;
+            max-width: 300px;
+            max-height: 140px;
+            width: auto;
+            height: auto;
+            
+        }
+        .woocommerce-loop-product__link {
+           // position: relative;
+            //padding: 1.27778rem 1.38889rem .83333rem;;
+            &:hover {
+                text-decoration: none;
+                color: #888;
+                box-shadow: 0 4px 12px rgba(0,0,0,.05), 0 2px 6px rgba(0,0,0,.15);
+            }
+        }
+        .price {
+            position: absolute;
+            display: inline-block;
+            top: 60%;
+            font-size: .83333rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            background-color: #d80019;
+            color: #fff !important;
+            padding: 0 .27778rem;
+            left: 5%;
+        }
+        .woocommerce-loop-product__title {
+            font-size: .73333rem !important;
+            margin-bottom: .11111rem;
+            text-transform: uppercase;
+            font-family: Dosis-Bold, Helvetica, Arial, sans-serif;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #000;
+            margin-left: 5% !important;
+            margin-top: -5% !important;
+        }
+        .add_to_cart_button  {
+            overflow: hidden;
+            display:none;
+        }
+        .featured-product__categories {
+            font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+            font-size: .73333rem;
+            color: @color_text_grey;
+            margin-left: 5% !important;
+            &:before {
+                font-family: "FontAwesome"; font-weight: 400; content: "\f022";
+                margin-right:5px;
+            }
+        }
+
+        .card {
+            .card-body {
+                .card-price {
+                }
+                .card-title {
+                }
+                .card-items {
+                    color: @color_text_grey;
+                    position: relative;
+                    margin-top: .66667rem;
+                    padding-top: .66667rem;
+
+                    &:before {
+                        position: absolute;
+                        content: "";
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 2px;
+                        background: repeating-linear-gradient(90deg, rgba(0, 0, 0, .1), rgba(0, 0, 0, .1) 2px, transparent 0, transparent 6px);
+                    }
+
+                    .card-item {
+                        padding: 0;
+                        font-size: .83333rem;
+                        margin-bottom: 0;
+
+                        .fa {
+                            width: 1rem;
+                            display: inline-block;
+                            font: normal normal normal 14px/1 FontAwesome;
+                            font-size: inherit;
+                            text-rendering: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

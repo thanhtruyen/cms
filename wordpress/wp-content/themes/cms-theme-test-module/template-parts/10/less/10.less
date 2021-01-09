@@ -1,0 +1,70 @@
+.type-10 {
+    @color_background =#FDFDFD;
+    font-family: Dosis-Extra-Bold;
+    .card-deck {
+        position: relative;
+        text-align: center;
+        color: white;
+        margin-top: 5%;
+
+        .card {
+            text-decoration: none;
+            color: #fff;
+
+            img {
+                &:before {
+                    transition: transform .5s, filter 1.5s ease-in-out;
+                }
+                
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .card-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+            font-weight: 800;
+            font-size: 2.11111rem;
+            text-transform: uppercase;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, .15);
+        }
+    }
+
+    .btn-shopmore {
+        display: inline;
+        text-align: center;
+
+        p {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+
+        .btn {
+            display: inline-block;
+            font-weight: 800;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            cursor: pointer;
+            user-select: none;
+            border: 1px solid transparent;
+            border-radius: 0;
+            padding: .88889rem 1.58889rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            background-color: #3b3331;
+
+            &:hover {
+                background-color: #2d2725;
+            }
+        }
+    }
+}
